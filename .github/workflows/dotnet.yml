@@ -21,11 +21,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: use this action, test solution dir
-      uses: zyborg/dotnet-tests-report@v1
-      with:
-        project_path: Tests/Tests
-        set_check_status_from_test_outcome: true
-        report_name: unit_tests
-        report_title: Unit Test Report
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
