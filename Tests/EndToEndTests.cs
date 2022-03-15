@@ -11,6 +11,12 @@ namespace Tests
     public class EndToEndTests
     {
         [TestMethod]
+        [DeploymentItem("..\\..\\..\\files\\campaigns\\FGE\\db.xml")]
+        [DeploymentItem("..\\..\\..\\files\\campaigns\\FGE\\images\\Test Map.jpg")]
+        [DeploymentItem("..\\..\\..\\files\\campaigns\\FGE\\images\\Sample Images\\Test Map 3.jpg")]
+        [DeploymentItem("..\\..\\..\\files\\config\\Export All.json")]
+        [DeploymentItem("..\\..\\..\\files\\images\\Battlemap.jpg")]
+        [DeploymentItem("..\\..\\..\\files\\images\\Sample Image\\Test Map 2.jpg")]
         public void NoFlagsExportAll()
         {
             string modfile = "..\\..\\..\\files\\output\\ExportAll.mod";
