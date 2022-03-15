@@ -31,6 +31,7 @@ namespace FGE {
                   .WithParsed<Options>(o =>
                   {
                       // Check that the campaign folder and db.xml file exist.
+                      Console.WriteLine(string.Join("\r\n", Directory.EnumerateDirectories(Directory.GetCurrentDirectory())));
                       if (!Directory.Exists(o.CampaignFolder))
                       {
                           throw new ArgumentException($"Campaign folder not found. {o.CampaignFolder}");

@@ -13,15 +13,15 @@ namespace Tests
         [TestMethod]
         public void NoFlagsExportAll()
         {
-            string modfile = "files\\output\\ExportAll.mod";
-            string controlFolder = "files\\modules\\Export All";
+            string modfile = "files/output/ExportAll.mod";
+            string controlFolder = "files/modules/Export All";
             // Delete file from a previous run of this test
             if (File.Exists(modfile))
                 File.Delete(modfile);
 
             // Get the test files
-            string configfile = Path.Combine(Directory.GetCurrentDirectory(), "files\\config\\Export All.json");
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), "files\\campaigns\\FGE");
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), "files/config/Export All.json");
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), "files/campaigns/FGE");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
