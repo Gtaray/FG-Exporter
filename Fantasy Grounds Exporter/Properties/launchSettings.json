@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Fantasy Grounds Exporter": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"D:\\George\\FGU\\campaigns\\TheIllrigger\" -c export.json"
+    }
+  }
+}

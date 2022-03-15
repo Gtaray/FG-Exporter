@@ -1,0 +1,14 @@
+{
+    "outputFolder": "",
+    "fileName": "fge",
+    "thumbnail": "../../../files/thumbnail.png",
+    "name": "FGE Sample",
+    "displayName": "Sample Campaign", 
+    "category": "Sample",
+    "author": "George Taray",
+    "readOnly": false,
+    "playerModule": false,
+    "anyRuleset": false,
+    "recordtypes": [ ],
+    "dataImagesFolder": "../images"
+}
