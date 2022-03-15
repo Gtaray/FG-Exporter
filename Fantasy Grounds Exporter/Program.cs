@@ -33,7 +33,7 @@ namespace FGE {
                       // Check that the campaign folder and db.xml file exist.
                       if (!Directory.Exists(o.CampaignFolder))
                       {
-                          throw new ArgumentException("Campaign folder not found.");
+                          throw new ArgumentException($"Campaign folder not found. {o.CampaignFolder}");
                       }
                       string dbfile = Path.Combine(o.CampaignFolder, "db.xml");
                       if (!File.Exists(dbfile))

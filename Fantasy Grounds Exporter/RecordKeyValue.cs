@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+#nullable enable
 namespace FGE
 {
     public struct RecordKey
@@ -59,3 +60,4 @@ namespace FGE
         }
     }
 }
+#nullable disable
