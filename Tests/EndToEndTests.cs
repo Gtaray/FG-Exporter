@@ -43,6 +43,7 @@ namespace Tests
                 using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
                 {
                     string control = File.ReadAllText(Path.Combine(controlFolder, "db.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
                     string xml = reader.ReadToEnd();
                     Assert.AreEqual(control, xml);
                 }
@@ -51,6 +52,7 @@ namespace Tests
                 using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
                 {
                     string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
                     string xml = reader.ReadToEnd();
                     Assert.AreEqual(control, xml);
                 }
