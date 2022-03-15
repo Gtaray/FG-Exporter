@@ -1,5 +1,5 @@
 {
-  "outputFolder": "../../../files/output",
+  "outputFolder": "files/output",
   "fileName": "ExportAll",
   "thumbnail": "",
   "name": "FGE Sample",
@@ -53,5 +53,5 @@
       "dbPath": "tables"
     }
   ],
-  "dataImagesFolder": "../../../files"
+  "dataImagesFolder": "files"
 }
