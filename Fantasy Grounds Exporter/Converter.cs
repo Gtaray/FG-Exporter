@@ -103,12 +103,13 @@ namespace FGE
             // Add the thumbnail
             if (!string.IsNullOrEmpty(Config.Thumbnail))
             {
-                if (!File.Exists(Config.Thumbnail))
+                string thumbnailPath = Path.Combine(Directory.GetCurrentDirectory(), Config.Thumbnail);
+                if (!File.Exists(thumbnailPath))
                 {
-                    throw new ArgumentException($"Could not find thumbnail {Config.Thumbnail}");
+                    throw new ArgumentException($"Could not find thumbnail {thumbnailPath}");
                 }
-                string thumbnailName = Path.GetFileName(Config.Thumbnail);
-                File.Copy(Config.Thumbnail, Path.Combine(workingdir.FullName, thumbnailName));
+                string thumbnailName = Path.GetFileName(thumbnailPath);
+                File.Copy(thumbnailPath, Path.Combine(workingdir.FullName, thumbnailName));
             }
 
             // Get all the images into the module folder

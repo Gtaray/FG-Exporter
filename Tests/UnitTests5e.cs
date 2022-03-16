@@ -455,7 +455,7 @@ namespace Tests
             string modfile = "files/output/5e_AnyRulesetReadOnlyPlayerModule.mod";
             string controlFolder = "files/5e/modules/Any Ruleset, Read Only, Player Module";
             string workingdir = "files/output/5e_AnyRulesetReadOnlyPlayerModule";
-            string jsonfile = "files/5e/config/Any RUleset, Read Only, Player Module.json";
+            string jsonfile = "files/5e/config/Any Ruleset, Read Only, Player Module.json";
 
             // Delete file from a previous run of this test
             if (File.Exists(modfile))
