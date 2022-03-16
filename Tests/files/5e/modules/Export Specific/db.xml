@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="8.1|CoreRPG:5">
+	<background>
+		<id-00001>
+			<equipment type="string">A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a belt pouch containing 15 gp</equipment>
+			<features>
+				<shelterofthefaithful>
+					<name type="string">Shelter of the Faithful</name>
+					<text type="formattedtext">
+						<p>As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.</p>
+						<p>You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.</p>
+					</text>
+				</shelterofthefaithful>
+			</features>
+			<languages type="string">Two of your choice</languages>
+			<name type="string">Acolyte</name>
+			<skill type="string">Insight, Religion</skill>
+			<supportingtables type="string">Acolyte Personality Trait,Acolyte Ideal,Acolyte Bond,Acolyte Flaw</supportingtables>
+			<text type="formattedtext">
+				<p>You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric-performing sacred rites is not the same thing as channeling divine power.</p>
+				<p>Choose a god, a pantheon of gods, or some other quasi-divine being from among those listed in &#34;Fantasy-Historical Pantheons&#34; or those specified by your GM, and work with your GM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny.</p>
+				<h>Proficiencies</h>
+				<p>
+					<b>Skill: </b>Insight, Religion</p>
+				<p>
+					<b>Languages: </b>Two of your choice</p>
+				<p>
+					<b>Equipment: </b>A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a belt pouch containing 15 gp</p>
+				<h>Features</h>
+				<linklist>
+					<link class="reference_backgroundfeature" recordname="reference.backgrounddata.acolyte.features.shelterofthefaithful@DD5E SRD Data">
+						<b>Feature: </b>Shelter of the Faithful</link>
+				</linklist>
+				<h>Suggested Characteristics</h>
+				<p>Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, or hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.</p>
+				<linklist>
+					<link class="table" recordname="tables.tab_acolytepersonalitytrait@DD5E SRD Data">
+						<b>Table: </b>Acolyte Personality Trait</link>
+					<link class="table" recordname="tables.tab_acolyteideal@DD5E SRD Data">
+						<b>Table: </b>Acolyte Ideal</link>
+					<link class="table" recordname="tables.tab_acolytebond@DD5E SRD Data">
+						<b>Table: </b>Acolyte Bond</link>
+					<link class="table" recordname="tables.tab_acolyteflaw@DD5E SRD Data">
+						<b>Table: </b>Acolyte Flaw</link>
+				</linklist>
+			</text>
+		</id-00001>
+	</background>
+	<battle>
+		<id-00001>
+			<exp type="number">0</exp>
+			<name type="string">Test Encounter</name>
+			<npclist />
+		</id-00001>
+	</battle>
+	<battlerandom>
+		<id-00001>
+			<name type="string">Random Encounter</name>
+			<npclist />
+		</id-00001>
+	</battlerandom>
+	<class>
+		<id-00004>
+			<abilities>
+				<collegeoflore>
+					<level type="number">1</level>
+					<name type="string">College of Lore</name>
+					<text type="formattedtext">
+						<p>Bards of the College of Lore know something about everything, collecting bits of knowledge from sources as diverse as ancient tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the local temple to their loyalty to the king.</p>
+						<p>The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic.</p>
+						<p>The college's members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self5 important figures of authority.</p>
+						<h>Features</h>
+						<linklist>
+							<link class="reference_classfeature" recordname="reference.classdata.bard.features.bonusproficiencies_lore_3@DD5E SRD Data">Bonus Proficiencies (Lore)</link>
+							<link class="reference_classfeature" recordname="reference.classdata.bard.features.cuttingwords3@DD5E SRD Data">Cutting Words</link>
+							<link class="reference_classfeature" recordname="reference.classdata.bard.features.additionalmagicalsecrets6@DD5E SRD Data">Additional Magical Secrets</link>
+							<link class="reference_classfeature" recordname="reference.classdata.bard.features.peerlessskill14@DD5E SRD Data">Peerless Skill</link>
+						</linklist>
+					</text>
+				</collegeoflore>
+			</abilities>
+			<equipment>
+				<standard>
+					<group type="string">standard</group>
+				</standard>
+			</equipment>
+			<features>
+				<abilityscoreimprovement12>
+					<level type="number">12</level>
+					<name type="string">Ability Score Improvement</name>
+					<text type="formattedtext">
+						<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+					</text>
+				</abilityscoreimprovement12>
+				<abilityscoreimprovement16>
+					<level type="number">16</level>
+					<name type="string">Ability Score Improvement</name>
+					<text type="formattedtext">
+						<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+					</text>
+				</abilityscoreimprovement16>
+				<abilityscoreimprovement19>
+					<level type="number">19</level>
+					<name type="string">Ability Score Improvement</name>
+					<text type="formattedtext">
+						<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+					</text>
+				</abilityscoreimprovement19>
+				<abilityscoreimprovement4>
+					<level type="number">4</level>
+					<name type="string">Ability Score Improvement</name>
+					<text type="formattedtext">
+						<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+					</text>
+				</abilityscoreimprovement4>
+				<abilityscoreimprovement8>
+					<level type="number">8</level>
+					<name type="string">Ability Score Improvement</name>
+					<text type="formattedtext">
+						<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.</p>
+					</text>
+				</abilityscoreimprovement8>
+				<additionalmagicalsecrets6>
+					<level type="number">6</level>
+					<name type="string">Additional Magical Secrets</name>
+					<specialization type="string">College of Lore</specialization>
+					<text type="formattedtext">
+						<p>At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you and don't count against the number of bard spells you know.</p>
+					</text>
+				</additionalmagicalsecrets6>
+				<bardcollege3>
+					<level type="number">3</level>
+					<name type="string">Bard College</name>
+					<specializationchoice type="number">1</specializationchoice>
+					<text type="formattedtext">
+						<p>The way of a bard is inherently gregarious. Bards seek each other out to swap songs and stories, boast of their accomplishments, and share their knowledge. Bards form loose associations, which they call colleges, to facilitate their gatherings and preserve their particular traditions.</p>
+						<p>At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College of Lore. Your choice grants you features at 3rd level and then again at 6th and 14th level.</p>
+					</text>
+				</bardcollege3>
+				<bardicinspiration1>
+					<level type="number">1</level>
+					<name type="string">Bardic Inspiration</name>
+					<text type="formattedtext">
+						<p>You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.</p>
+						<p>Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw that it just made. The creature can wait until after it rolls the d20,before deciding to use the Bardic Inspiration die but must must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.</p>
+						<p>You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
+						<p>Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.</p>
+					</text>
+				</bardicinspiration1>
+				<bonusproficiencies_lore_3>
+					<level type="number">3</level>
+					<name type="string">Bonus Proficiencies (Lore)</name>
+					<specialization type="string">College of Lore</specialization>
+					<text type="formattedtext">
+						<p>When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.</p>
+					</text>
+				</bonusproficiencies_lore_3>
+				<countercharm6>
+					<level type="number">6</level>
+					<name type="string">Countercharm</name>
+					<text type="formattedtext">
+						<p>At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or you voluntarily end it (no action required).</p>
+					</text>
+				</countercharm6>
+				<cuttingwords3>
+					<level type="number">3</level>
+					<name type="string">Cutting Words</name>
+					<specialization type="string">College of Lore</specialization>
+					<text type="formattedtext">
+						<p>When you join the College of Lore at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed.</p>
+					</text>
+				</cuttingwords3>
+				<expertise10>
+					<level type="number">10</level>
+					<name type="string">Expertise</name>
+					<text type="formattedtext">
+						<p>At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that involves one of the chosen proficiencies.</p>
+						<p>At 10th level, you can choose another two skill proficiencies to gain this benefit.</p>
+					</text>
+				</expertise10>
+				<expertise3>
+					<level type="number">3</level>
+					<name type="string">Expertise</name>
+					<text type="formattedtext">
+						<p>At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that involves one of the chosen proficiencies.</p>
+						<p>At 10th level, you can choose another two skill proficiencies to gain this benefit.</p>
+					</text>
+				</expertise3>
+				<fontofinspiration10>
+					<level type="number">10</level>
+					<name type="string">Font of Inspiration</name>
+					<text type="formattedtext">
+						<p>Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest.</p>
+					</text>
+				</fontofinspiration10>
+				<fontofinspiration15>
+					<level type="number">15</level>
+					<name type="string">Font of Inspiration</name>
+					<text type="formattedtext">
+						<p>Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest.</p>
+					</text>
+				</fontofinspiration15>
+				<fontofinspiration5>
+					<level type="number">5</level>
+					<name type="string">Font of Inspiration</name>
+					<text type="formattedtext">
+						<p>Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest.</p>
+					</text>
+				</fontofinspiration5>
+				<jackofalltrades2>
+					<level type="number">2</level>
+					<name type="string">Jack of All Trades</name>
+					<text type="formattedtext">
+						<p>Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include that bonus.</p>
+					</text>
+				</jackofalltrades2>
+				<magicalsecrets10>
+					<level type="number">10</level>
+					<name type="string">Magical Secrets</name>
+					<text type="formattedtext">
+						<p>By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.</p>
+						<p>The chosen spells count as bard spells for you and are included in the Spells Known column of the Bard table.</p>
+						<p>You learn two additional spells from any class at 14th level and again at 18th level.</p>
+					</text>
+				</magicalsecrets10>
+				<magicalsecrets18>
+					<level type="number">18</level>
+					<name type="string">Magical Secrets</name>
+					<text type="formattedtext">
+						<p>By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.</p>
+						<p>The chosen spells count as bard spells for you and are included in the Spells Known column of the Bard table.</p>
+						<p>You learn two additional spells from any class at 14th level and again at 18th level.</p>
+					</text>
+				</magicalsecrets18>
+				<peerlessskill14>
+					<level type="number">14</level>
+					<name type="string">Peerless Skill</name>
+					<specialization type="string">College of Lore</specialization>
+					<text type="formattedtext">
+						<p>Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after your roll the die for the ability check, but before the GM tells you whether you succeed or fail.</p>
+					</text>
+				</peerlessskill14>
+				<songofrest13>
+					<level type="number">13</level>
+					<name type="string">Song of Rest</name>
+					<text type="formattedtext">
+						<p>Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creature who can hear your performance regain any hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 extra hit points.</p>
+						<p>The extra hit points increase when you reach certain levels in this class: 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level.</p>
+					</text>
+				</songofrest13>
+				<songofrest17>
+					<level type="number">17</level>
+					<name type="string">Song of Rest</name>
+					<text type="formattedtext">
+						<p>Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creature who can hear your performance regain any hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 extra hit points.</p>
+						<p>The extra hit points increase when you reach certain levels in this class: 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level.</p>
+					</text>
+				</songofrest17>
+				<songofrest2>
+					<level type="number">2</level>
+					<name type="string">Song of Rest</name>
+					<text type="formattedtext">
+						<p>Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creature who can hear your performance regain any hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 extra hit points.</p>
+						<p>The extra hit points increase when you reach certain levels in this class: 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level.</p>
+					</text>
+				</songofrest2>
+				<songofrest9>
+					<level type="number">9</level>
+					<name type="string">Song of Rest</name>
+					<text type="formattedtext">
+						<p>Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creature who can hear your performance regain any hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 extra hit points.</p>
+						<p>The extra hit points increase when you reach certain levels in this class: 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level.</p>
+					</text>
+				</songofrest9>
+				<spellcasting1>
+					<level type="number">1</level>
+					<name type="string">Spellcasting</name>
+					<text type="formattedtext">
+						<p>You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your spells are part of your vast repertoire, magic that you can tune to different situations.</p>
+						<linklist>
+							<link class="reference_colindex" recordname="reference.spelllists.bard@DD5E SRD Data">Bard Spells</link>
+						</linklist>
+						<p>
+							<b>Cantrips</b>
+						</p>
+						<p>You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.</p>
+						<p>
+							<b>Spell Slots</b>
+						</p>
+						<p>The Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You must finish along rest to regain any expended spell slots.</p>
+						<p>For example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.</p>
+						<p>
+							<b>Spells Known of 1st Level and Higher</b>
+						</p>
+						<p>You know four 1st-level spells of your choice from the bard spell list.</p>
+						<p>The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.</p>
+						<p>Additionally, when you gain a level in this class, you can choose one of the spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.</p>
+						<p>
+							<b>Spellcasting Ability</b>
+						</p>
+						<p>Charisma is your spellcasting ability for your bard spells, since the power of your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.</p>
+						<p>
+							<b>Spell Save DC </b>= 8 + your proficiency bonus + your Charisma modifier</p>
+						<p>
+							<b>Spell Attack modifier </b>= your your proficiency bonus + Charisma modifier</p>
+						<p>
+							<b>Ritual Casting</b>
+						</p>
+						<p>You can cast any bard spell you know as a ritual if that spell has the ritual tag.</p>
+						<p>
+							<b>Spellcasting Focus</b>
+						</p>
+						<p>You can use a musical instrument as a spellcasting focus for your bard spells.</p>
+					</text>
+				</spellcasting1>
+				<superiorinspiration20>
+					<level type="number">20</level>
+					<name type="string">Superior Inspiration</name>
+					<text type="formattedtext">
+						<p>At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use.</p>
+					</text>
+				</superiorinspiration20>
+			</features>
+			<hp>
+				<hitdice>
+					<name type="string">Hit Dice</name>
+					<text type="string">1d8 per bard level</text>
+				</hitdice>
+				<hitpointsat1stlevel>
+					<name type="string">Hit Points at 1st Level</name>
+					<text type="string">8 + your Constitution modifier</text>
+				</hitpointsat1stlevel>
+				<hitpointsathigherlevels>
+					<name type="string">Hit Points at Higher Levels</name>
+					<text type="string">1d8 (or 5) + your Constitution modifier per bard level after 1st</text>
+				</hitpointsathigherlevels>
+			</hp>
+			<multiclassfeatures />
+			<multiclassproficiencies>
+				<armor>
+					<name type="string">Armor</name>
+					<text type="string">Light armor</text>
+				</armor>
+				<skills>
+					<name type="string">Skills</name>
+					<text type="string">Choose any one</text>
+				</skills>
+				<tools>
+					<name type="string">Tools</name>
+					<text type="string">One musical instrument of your choice</text>
+				</tools>
+			</multiclassproficiencies>
+			<name type="string">Bard</name>
+			<proficiencies>
+				<armor>
+					<name type="string">Armor</name>
+					<text type="string">Light armor</text>
+				</armor>
+				<savingthrows>
+					<name type="string">Saving Throws</name>
+					<text type="string">Dexterity, Charisma</text>
+				</savingthrows>
+				<skills>
+					<name type="string">Skills</name>
+					<text type="string">Choose any three</text>
+				</skills>
+				<tools>
+					<name type="string">Tools</name>
+					<text type="string">Three musical instruments of your choice</text>
+				</tools>
+				<weapons>
+					<name type="string">Weapons</name>
+					<text type="string">Simple weapons, hand crossbows, longswords, rapiers, shortswords</text>
+				</weapons>
+			</proficiencies>
+			<text type="formattedtext">
+				<h>Class Features</h>
+				<p>As a bard, you gain the following class features.</p>
+				<h>The Bard</h>
+				<table>
+					<tr>
+						<td>
+							<b>Level</b>
+						</td>
+						<td>
+							<b>Proficiency</b>
+						</td>
+						<td colspan="3">
+							<b>Features</b>
+						</td>
+						<td>
+							<b>Cantrips Known</b>
+						</td>
+						<td>
+							<b>Spells Known</b>
+						</td>
+					</tr>
+					<tr>
+						<td>1st</td>
+						<td>+2</td>
+						<td colspan="3">Spellcasting, Bardic Inspiration (d6)</td>
+						<td>2</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>2nd</td>
+						<td>+2</td>
+						<td colspan="3">Jack of All Trades, Song of Rest (d6)</td>
+						<td>2</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>3rd</td>
+						<td>+2</td>
+						<td colspan="3">Bard College, Expertise</td>
+						<td>2</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>4th</td>
+						<td>+2</td>
+						<td colspan="3">Ability Score Improvement</td>
+						<td>3</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>5th</td>
+						<td>+3</td>
+						<td colspan="3">Bardic Inspiration (d8), Font of Inspiration</td>
+						<td>3</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>6th</td>
+						<td>+3</td>
+						<td colspan="3">Countercharm, Bard College feature</td>
+						<td>3</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>7th</td>
+						<td>+3</td>
+						<td colspan="3">-</td>
+						<td>3</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>8th</td>
+						<td>+3</td>
+						<td colspan="3">Ability Score Improvement</td>
+						<td>3</td>
+						<td>11</td>
+					</tr>
+					<tr>
+						<td>9th</td>
+						<td>+4</td>
+						<td colspan="3">Song of Rest (d8)</td>
+						<td>3</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>10th</td>
+						<td>+4</td>
+						<td colspan="3">Bardic Inspiration (d10), Expertise, Magical Secrets</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+					<tr>
+						<td>11th</td>
+						<td>+4</td>
+						<td colspan="3">-</td>
+						<td>4</td>
+						<td>15</td>
+					</tr>
+					<tr>
+						<td>12th</td>
+						<td>+4</td>
+						<td colspan="3">Ability Score Improvement</td>
+						<td>4</td>
+						<td>15</td>
+					</tr>
+					<tr>
+						<td>13th</td>
+						<td>+5</td>
+						<td colspan="3">Song of Rest (d10)</td>
+						<td>4</td>
+						<td>16</td>
+					</tr>
+					<tr>
+						<td>14th</td>
+						<td>+5</td>
+						<td colspan="3">Magical Secrets, Bard College Feature</td>
+						<td>4</td>
+						<td>18</td>
+					</tr>
+					<tr>
+						<td>15th</td>
+						<td>+5</td>
+						<td colspan="3">Bardic Inspiration (d12)</td>
+						<td>4</td>
+						<td>19</td>
+					</tr>
+					<tr>
+						<td>16th</td>
+						<td>+5</td>
+						<td colspan="3">Ability Score Improvement</td>
+						<td>4</td>
+						<td>19</td>
+					</tr>
+					<tr>
+						<td>17th</td>
+						<td>+6</td>
+						<td colspan="3">Song of Rest (d12)</td>
+						<td>4</td>
+						<td>20</td>
+					</tr>
+					<tr>
+						<td>18th</td>
+						<td>+6</td>
+						<td colspan="3">Magical Secrets</td>
+						<td>4</td>
+						<td>22</td>
+					</tr>
+					<tr>
+						<td>19th</td>
+						<td>+6</td>
+						<td colspan="3">Ability Score Improvement</td>
+						<td>4</td>
+						<td>22</td>
+					</tr>
+					<tr>
+						<td>20th</td>
+						<td>+6</td>
+						<td colspan="3">Superior Inspiration</td>
+						<td>4</td>
+						<td>22</td>
+					</tr>
+				</table>
+				<h>Spell Slots per Spell Level</h>
+				<table>
+					<tr>
+						<td>
+							<b>Level</b>
+						</td>
+						<td>
+							<b>Cantrips</b>
+						</td>
+						<td>
+							<b>1st</b>
+						</td>
+						<td>
+							<b>2nd</b>
+						</td>
+						<td>
+							<b>3rd</b>
+						</td>
+						<td>
+							<b>4th</b>
+						</td>
+						<td>
+							<b>5th</b>
+						</td>
+						<td>
+							<b>6th</b>
+						</td>
+						<td>
+							<b>7th</b>
+						</td>
+						<td>
+							<b>8th</b>
+						</td>
+						<td>
+							<b>9th</b>
+						</td>
+					</tr>
+					<tr>
+						<td>1st</td>
+						<td>2</td>
+						<td>2</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>2nd</td>
+						<td>2</td>
+						<td>3</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>3rd</td>
+						<td>2</td>
+						<td>4</td>
+						<td>2</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>4th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>5th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>2</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>6th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>7th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>8th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>9th</td>
+						<td>3</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>10th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>11th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>12th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>13th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>14th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>15th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>16th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>17th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>18th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>19th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>20th</td>
+						<td>4</td>
+						<td>4</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>2</td>
+						<td>2</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+				</table>
+				<h>Hit Points</h>
+				<p>
+					<b>Hit Dice: </b>1d8 per bard level</p>
+				<p>
+					<b>Hit Points At 1st Level: </b>8 + your Constitution modifier</p>
+				<p>
+					<b>Hit Points At Higher Levels: </b>1d8 (or 5) + your Constitution modifier per bard level after 1st</p>
+				<h>Proficiencies</h>
+				<p>
+					<b>Armor: </b>Light armor</p>
+				<p>
+					<b>Weapons: </b>Simple weapons, hand crossbows, longswords, rapiers, shortswords</p>
+				<p>
+					<b>Tools: </b>Three musical instruments of your choice</p>
+				<p>
+					<b>Saving Throws: </b>Dexterity, Charisma</p>
+				<p>
+					<b>Skills: </b>Choose any three</p>
+				<h>Equipment</h>
+				<p>You start with the following equipment, in addition to the equipment granted by your background;</p>
+				<list>
+					<li>(a) a rapier, (b) a longsword, or (c) any simple weapon</li>
+					<li>(a) a diplomat's pack or (b) an entertainer's pack</li>
+					<li>(a) a lute or (b) any other musical instrument</li>
+					<li>Leather armor and a dagger</li>
+				</list>
+				<h>Features</h>
+				<linklist>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.spellcasting1@DD5E SRD Data">Spellcasting</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.bardicinspiration1@DD5E SRD Data">Bardic Inspiration</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.jackofalltrades2@DD5E SRD Data">Jack of All Trades</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.songofrest2@DD5E SRD Data">Song of Rest</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.bardcollege3@DD5E SRD Data">Bard College</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.expertise3@DD5E SRD Data">Expertise</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.abilityscoreimprovement4@DD5E SRD Data">Ability Score Improvement</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.fontofinspiration5@DD5E SRD Data">Font of Inspiration</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.countercharm6@DD5E SRD Data">Countercharm</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.magicalsecrets10@DD5E SRD Data">Magical Secrets</link>
+					<link class="reference_classfeature" recordname="reference.classdata.bard.features.superiorinspiration20@DD5E SRD Data">Superior Inspiration</link>
+				</linklist>
+				<h>Bard Colleges</h>
+				<linklist>
+					<link class="reference_classability" recordname="reference.classdata.bard.abilities.collegeoflore@DD5E SRD Data">College of Lore</link>
+				</linklist>
+			</text>
+		</id-00004>
+	</class>
+	<effects>
+		<id-00001>
+			<duration type="number">1</duration>
+			<isgmonly type="number">0</isgmonly>
+			<label type="string">Test Effect</label>
+		</id-00001>
+	</effects>
+	<encounter>
+		<id-00001>
+			<name type="string">Test Story</name>
+			<text type="formattedtext">
+				<p />
+			</text>
+		</id-00001>
+	</encounter>
+	<feat>
+		<id-00001>
+			<name type="string">Grappler</name>
+			<prerequisite type="string">Strength 13 or higher</prerequisite>
+			<text type="formattedtext">
+				<p>
+					<i>Prerequisite: Strength 13 or higher</i>
+				</p>
+				<p>You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:</p>
+				<list>
+					<li>You have advantage on attack rolls against a creature you are grappling.</li>
+					<li>You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends.</li>
+				</list>
+			</text>
+		</id-00001>
+	</feat>
+	<image>
+		<id-00001>
+			<image type="image">
+				<grid>on</grid>
+				<color>#66FFFFFF</color>
+				<layers>
+					<layer>
+						<name>Battlemap.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Battlemap.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">Battlemap</name>
+		</id-00001>
+	</image>
+	<item>
+		<id-00007>
+			<cost type="string">5 cp</cost>
+			<isidentified type="number">1</isidentified>
+			<name type="string">Belt</name>
+			<subtype type="string">Standard</subtype>
+			<type type="string">Adventuring Gear</type>
+			<weight type="number">0.1</weight>
+		</id-00007>
+	</item>
+	<itemtemplate>
+		<id-00001>
+			<ac type="number">0</ac>
+			<bonus type="number">0</bonus>
+			<description type="formattedtext">
+				<p />
+			</description>
+			<name type="string">Item Template</name>
+			<weight type="number">0</weight>
+		</id-00001>
+	</itemtemplate>
+	<library>
+		<fgesample static="true">
+			<categoryname type="string">Sample</categoryname>
+			<name type="string">fgesample</name>
+			<entries>
+				<background>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Backgrounds</name>
+					<recordtype type="string">background</recordtype>
+				</background>
+				<battle>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Encounters</name>
+					<recordtype type="string">battle</recordtype>
+				</battle>
+				<battlerandom>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Encounters (Random)</name>
+					<recordtype type="string">battlerandom</recordtype>
+				</battlerandom>
+				<charsheet>
+					<librarylink type="windowreference">
+						<class>pregencharselect</class>
+						<recordname>pregencharsheet</recordname>
+					</librarylink>
+					<name type="string">Pregenerated Characters</name>
+				</charsheet>
+				<class>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Classes</name>
+					<recordtype type="string">class</recordtype>
+				</class>
+				<feat>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Feats</name>
+					<recordtype type="string">feat</recordtype>
+				</feat>
+				<image>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Images</name>
+					<recordtype type="string">image</recordtype>
+				</image>
+				<item>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Items</name>
+					<recordtype type="string">item</recordtype>
+				</item>
+				<itemtemplate>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Item Templates</name>
+					<recordtype type="string">itemtemplate</recordtype>
+				</itemtemplate>
+				<npc>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">NPCs</name>
+					<recordtype type="string">npc</recordtype>
+				</npc>
+				<quest>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Quests</name>
+					<recordtype type="string">quest</recordtype>
+				</quest>
+				<race>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Races</name>
+					<recordtype type="string">race</recordtype>
+				</race>
+				<skill>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Skills</name>
+					<recordtype type="string">skill</recordtype>
+				</skill>
+				<spell>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Spells</name>
+					<recordtype type="string">spell</recordtype>
+				</spell>
+				<story>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Story</name>
+					<recordtype type="string">story</recordtype>
+				</story>
+				<storytemplate>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Story Templates</name>
+					<recordtype type="string">storytemplate</recordtype>
+				</storytemplate>
+				<table>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Tables</name>
+					<recordtype type="string">table</recordtype>
+				</table>
+				<treasureparcel>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Parcels</name>
+					<recordtype type="string">treasureparcel</recordtype>
+				</treasureparcel>
+			</entries>
+		</fgesample>
+	</library>
+	<modifiers>
+		<id-00001>
+			<bonus type="number">0</bonus>
+			<isgmonly type="number">0</isgmonly>
+			<label type="string">Test Modifier</label>
+		</id-00001>
+	</modifiers>
+	<npc>
+		<id-00001>
+			<abilities>
+				<charisma>
+					<bonus type="number">4</bonus>
+					<score type="number">19</score>
+				</charisma>
+				<constitution>
+					<bonus type="number">6</bonus>
+					<score type="number">23</score>
+				</constitution>
+				<dexterity>
+					<bonus type="number">0</bonus>
+					<score type="number">10</score>
+				</dexterity>
+				<intelligence>
+					<bonus type="number">3</bonus>
+					<score type="number">16</score>
+				</intelligence>
+				<strength>
+					<bonus type="number">7</bonus>
+					<score type="number">25</score>
+				</strength>
+				<wisdom>
+					<bonus type="number">2</bonus>
+					<score type="number">15</score>
+				</wisdom>
+			</abilities>
+			<ac type="number">19</ac>
+			<actext type="string">(natural armor)</actext>
+			<actions>
+				<id-00001>
+					<desc type="string">The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.</desc>
+					<name type="string">Multiattack</name>
+				</id-00001>
+				<id-00002>
+					<desc type="string">Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage + 5 (1d10) lightning damage.</desc>
+					<name type="string">Bite</name>
+				</id-00002>
+				<id-00003>
+					<desc type="string">Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 14 (2d6 + 7) slashing damage.</desc>
+					<name type="string">Claw</name>
+				</id-00003>
+				<id-00004>
+					<desc type="string">Melee Weapon Attack: +12 to hit, reach 15 ft., one target. Hit: 16 (2d8 + 7) bludgeoning damage.</desc>
+					<name type="string">Tail</name>
+				</id-00004>
+				<id-00005>
+					<desc type="string">Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.</desc>
+					<name type="string">Frightful Presence</name>
+				</id-00005>
+				<id-00006>
+					<desc type="string">The dragon exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.</desc>
+					<name type="string">Lightning Breath (Recharge 5-6)</name>
+				</id-00006>
+			</actions>
+			<alignment type="string">lawful evil</alignment>
+			<bonusactions />
+			<cr type="string">16</cr>
+			<damageimmunities type="string">lightning</damageimmunities>
+			<hd type="string">(18d12 + 108)</hd>
+			<hp type="number">225</hp>
+			<innatespells />
+			<lairactions />
+			<languages type="string">Common, Draconic</languages>
+			<legendaryactions>
+				<id-00001>
+					<desc type="string">The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The dragon regains spent legendary actions at the start of its turn.</desc>
+					<name type="string">Options</name>
+				</id-00001>
+				<id-00002>
+					<desc type="string">The dragon makes a Wisdom (Perception) check.</desc>
+					<name type="string">Detect</name>
+				</id-00002>
+				<id-00003>
+					<desc type="string">The dragon makes a tail attack.</desc>
+					<name type="string">Tail Attack</name>
+				</id-00003>
+				<id-00004>
+					<desc type="string">The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.</desc>
+					<name type="string">Wing Attack (Costs 2 Actions)</name>
+				</id-00004>
+			</legendaryactions>
+			<name type="string">Adult Blue Dragon</name>
+			<reactions />
+			<savingthrows type="string">Dex +5, Con +11, Wis +7, Cha +9</savingthrows>
+			<senses type="string">blindsight 60 ft., darkvision 120 ft., passive Perception 22</senses>
+			<size type="string">Huge</size>
+			<skills type="string">Perception +12, Stealth +5</skills>
+			<speed type="string">40 ft., burrow 30 ft., fly 80 ft.</speed>
+			<spells />
+			<text type="formattedtext">
+				<p />
+			</text>
+			<token type="token">tokens/adultbluedragon.png@DD5E SRD Bestiary</token>
+			<traits>
+				<id-00001>
+					<desc type="string">If the dragon fails a saving throw, it can choose to succeed instead.</desc>
+					<name type="string">Legendary Resistance (3/Day)</name>
+				</id-00001>
+			</traits>
+			<type type="string">dragon</type>
+			<xp type="number">15000</xp>
+		</id-00001>
+	</npc>
+	<pregencharsheet>
+		<id-00001>
+			<abilities>
+				<charisma>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</charisma>
+				<constitution>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</constitution>
+				<dexterity>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</dexterity>
+				<intelligence>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</intelligence>
+				<strength>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</strength>
+				<wisdom>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</wisdom>
+			</abilities>
+			<backgroundlink type="windowreference">
+				<class />
+				<recordname />
+			</backgroundlink>
+			<classes />
+			<defenses>
+				<ac>
+					<armor type="number">0</armor>
+					<misc type="number">0</misc>
+					<prof type="number">1</prof>
+					<shield type="number">0</shield>
+					<temporary type="number">0</temporary>
+					<total type="number">10</total>
+				</ac>
+			</defenses>
+			<hp>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+				<wounds type="number">0</wounds>
+			</hp>
+			<initiative>
+				<misc type="number">0</misc>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+			</initiative>
+			<level type="number">0</level>
+			<name type="string">Test Character</name>
+			<perception type="number">10</perception>
+			<perceptionmodifier type="number">0</perceptionmodifier>
+			<profbonus type="number">2</profbonus>
+			<racelink type="windowreference">
+				<class />
+				<recordname />
+			</racelink>
+			<skilllist>
+				<id-00001>
+					<name type="string">Perception</name>
+					<stat type="string">wisdom</stat>
+				</id-00001>
+			</skilllist>
+			<speed>
+				<armor type="number">0</armor>
+				<base type="number">0</base>
+				<misc type="number">0</misc>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+			</speed>
+			<token type="token"></token>
+		</id-00001>
+	</pregencharsheet>
+	<quest>
+		<id-00001>
+			<description type="formattedtext">
+				<p />
+			</description>
+			<name type="string">Test Quest</name>
+			<xp type="number">0</xp>
+		</id-00001>
+	</quest>
+	<race>
+		<id-00003>
+			<name type="string">Halfling</name>
+			<subraces>
+				<lightfoot>
+					<name type="string">Lightfoot</name>
+					<text type="formattedtext">
+						<p>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others.</p>
+						<p>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.</p>
+						<h>Traits</h>
+						<linklist>
+							<link class="reference_subracialtrait" recordname="reference.racedata.halfling.subraces.lightfoot.traits.abilityscoreincrease@DD5E SRD Data">Ability Score Increase</link>
+							<link class="reference_subracialtrait" recordname="reference.racedata.halfling.subraces.lightfoot.traits.naturallystealthy@DD5E SRD Data">Naturally Stealthy</link>
+						</linklist>
+					</text>
+					<traits>
+						<abilityscoreincrease>
+							<name type="string">Ability Score Increase</name>
+							<text type="formattedtext">
+								<p>Your Charisma score increases by 1.</p>
+							</text>
+						</abilityscoreincrease>
+						<naturallystealthy>
+							<name type="string">Naturally Stealthy</name>
+							<text type="formattedtext">
+								<p>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>
+							</text>
+						</naturallystealthy>
+					</traits>
+				</lightfoot>
+			</subraces>
+			<text type="formattedtext">
+				<h>Halfling Traits</h>
+				<p>Your halfling character has a number of traits in common with all other halflings.</p>
+				<linklist>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.abilityscoreincrease@DD5E SRD Data">Ability Score Increase</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.age@DD5E SRD Data">Age</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.alignment@DD5E SRD Data">Alignment</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.size@DD5E SRD Data">Size</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.speed@DD5E SRD Data">Speed</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.lucky@DD5E SRD Data">Lucky</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.brave@DD5E SRD Data">Brave</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.halflingnimbleness@DD5E SRD Data">Halfling Nimbleness</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.languages@DD5E SRD Data">Languages</link>
+					<link class="reference_racialtrait" recordname="reference.racedata.halfling.traits.subrace@DD5E SRD Data">Subrace</link>
+				</linklist>
+			</text>
+			<traits>
+				<abilityscoreincrease>
+					<name type="string">Ability Score Increase</name>
+					<text type="formattedtext">
+						<p>Your Dexterity score increases by 2.</p>
+					</text>
+				</abilityscoreincrease>
+				<age>
+					<name type="string">Age</name>
+					<text type="formattedtext">
+						<p>A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.</p>
+					</text>
+				</age>
+				<alignment>
+					<name type="string">Alignment</name>
+					<text type="formattedtext">
+						<p>Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.</p>
+					</text>
+				</alignment>
+				<brave>
+					<name type="string">Brave</name>
+					<text type="formattedtext">
+						<p>You have advantage on saving throws against being frightened.</p>
+					</text>
+				</brave>
+				<halflingnimbleness>
+					<name type="string">Halfling Nimbleness</name>
+					<text type="formattedtext">
+						<p>You can move through the space of any creature that is of a size larger than yours.</p>
+					</text>
+				</halflingnimbleness>
+				<languages>
+					<name type="string">Languages</name>
+					<text type="formattedtext">
+						<p>You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.</p>
+					</text>
+				</languages>
+				<lucky>
+					<name type="string">Lucky</name>
+					<text type="formattedtext">
+						<p>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>
+					</text>
+				</lucky>
+				<size>
+					<name type="string">Size</name>
+					<text type="formattedtext">
+						<p>Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.</p>
+					</text>
+				</size>
+				<speed>
+					<name type="string">Speed</name>
+					<text type="formattedtext">
+						<p>Your base walking speed is 25 feet.</p>
+					</text>
+				</speed>
+				<subrace>
+					<name type="string">Subrace</name>
+					<text type="formattedtext">
+						<linklist>
+							<link class="reference_subrace" recordname="reference.racedata.halfling.subraces.lightfoot@DD5E SRD Data">Lightfoot</link>
+						</linklist>
+					</text>
+				</subrace>
+			</traits>
+		</id-00003>
+	</race>
+	<skill>
+		<id-00002>
+			<name type="string">Athletics</name>
+			<stat type="string">Strength</stat>
+			<text type="formattedtext">
+				<p>Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities:</p>
+				<list>
+					<li>You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off.</li>
+					<li>You try to jump an unusually long distance or pull off a stunt midjump.</li>
+					<li>You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming.</li>
+				</list>
+			</text>
+		</id-00002>
+	</skill>
+	<spell>
+		<id-00006>
+			<castingtime type="string">1 action</castingtime>
+			<components type="string">V, S, M (a pinch of powdered iron or iron filings)</components>
+			<description type="formattedtext">
+				<p>A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can't be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.</p>
+				<p>Spells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and can't protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.</p>
+				<p>
+					<b>
+						<i>Targeted Effects. </i>
+					</b>Spells and other magical effects, such as <i>magic missile </i>and <i>charm person </i>, that target a creature or an object in the sphere have no effect on that target.</p>
+				<p>
+					<b>
+						<i>Areas of Magic. </i>
+					</b>The area of another spell or magical effect, such as <i>fireball </i>, can't extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a <i>wall of fire </i>are suppressed within the sphere, creating a gap in the wall if the overlap is large enough.</p>
+				<p>
+					<b>
+						<i>Spells. </i>
+					</b>Any active spell or other magical effect on a creature or an object in the sphere is suppressed while the creature or object is in it.</p>
+				<p>
+					<b>
+						<i>Magic Items. </i>
+					</b>The properties and powers of magic items are suppressed in the sphere. For example, a <i>+1 longsword </i>in the sphere functions as a nonmagical longsword.</p>
+				<p>A magic weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or a piece of magic ammunition fully leaves the sphere (for example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.</p>
+				<p>
+					<b>
+						<i>Magical Travel. </i>
+					</b>Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or the departure point for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extra dimensional space such as that created by the <i>rope trick </i>spell, temporarily closes while in the sphere.</p>
+				<p>
+					<b>
+						<i>Creatures and Objects. </i>
+					</b>A creature or object summoned or created by magic temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.</p>
+				<p>
+					<b>
+						<i>Dispel Magic. </i>
+					</b>Spells and magical effects such as <i>dispel magic </i>have no effect on the sphere. Likewise, the spheres created by different <i>antimagic field </i>spells don't nullify each other.</p>
+			</description>
+			<duration type="string">Concentration, up to 1 hour</duration>
+			<level type="number">8</level>
+			<name type="string">Antimagic Field</name>
+			<range type="string">Self (10-foot-radius sphere)</range>
+			<school type="string">Abjuration</school>
+			<source type="string">Cleric, Wizard</source>
+		</id-00006>
+	</spell>
+	<storytemplate>
+		<id-00001>
+			<name type="string">Test Story Template</name>
+			<text type="formattedtext">
+				<p />
+			</text>
+		</id-00001>
+	</storytemplate>
+	<tables>
+		<id-00005>
+			<description type="string">Candle of Invocation table.</description>
+			<dice type="dice">d20</dice>
+			<hiderollresults type="number">0</hiderollresults>
+			<labelcol1 type="string">Alignment</labelcol1>
+			<mod type="number">0</mod>
+			<name type="string">Candle of Invocation</name>
+			<notes type="formattedtext" />
+			<output type="string">chat</output>
+			<resultscols type="number">1</resultscols>
+			<tablerows>
+				<id-00001>
+					<fromrange type="number">1</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Chaotic evil</result>
+						</id-00001>
+					</results>
+					<torange type="number">2</torange>
+				</id-00001>
+				<id-00002>
+					<fromrange type="number">3</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Chaotic neutral</result>
+						</id-00001>
+					</results>
+					<torange type="number">4</torange>
+				</id-00002>
+				<id-00003>
+					<fromrange type="number">5</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Chaotic good</result>
+						</id-00001>
+					</results>
+					<torange type="number">7</torange>
+				</id-00003>
+				<id-00004>
+					<fromrange type="number">8</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Neutral evil</result>
+						</id-00001>
+					</results>
+					<torange type="number">9</torange>
+				</id-00004>
+				<id-00005>
+					<fromrange type="number">10</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Neutral</result>
+						</id-00001>
+					</results>
+					<torange type="number">11</torange>
+				</id-00005>
+				<id-00006>
+					<fromrange type="number">12</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Neutral good</result>
+						</id-00001>
+					</results>
+					<torange type="number">13</torange>
+				</id-00006>
+				<id-00007>
+					<fromrange type="number">14</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Lawful evil</result>
+						</id-00001>
+					</results>
+					<torange type="number">15</torange>
+				</id-00007>
+				<id-00008>
+					<fromrange type="number">16</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Lawful neutral</result>
+						</id-00001>
+					</results>
+					<torange type="number">17</torange>
+				</id-00008>
+				<id-00009>
+					<fromrange type="number">18</fromrange>
+					<results>
+						<id-00001>
+							<result type="string">Lawful good</result>
+						</id-00001>
+					</results>
+					<torange type="number">20</torange>
+				</id-00009>
+			</tablerows>
+		</id-00005>
+	</tables>
+	<treasureparcels>
+		<id-00001>
+			<coinlist>
+				<id-00001>
+					<amount type="number">0</amount>
+					<description type="string">PP</description>
+				</id-00001>
+				<id-00002>
+					<amount type="number">0</amount>
+					<description type="string">GP</description>
+				</id-00002>
+				<id-00003>
+					<amount type="number">0</amount>
+					<description type="string">EP</description>
+				</id-00003>
+				<id-00004>
+					<amount type="number">0</amount>
+					<description type="string">SP</description>
+				</id-00004>
+				<id-00005>
+					<amount type="number">0</amount>
+					<description type="string">CP</description>
+				</id-00005>
+			</coinlist>
+			<itemlist />
+			<name type="string">Test parcel</name>
+		</id-00001>
+	</treasureparcels>
+</root>
