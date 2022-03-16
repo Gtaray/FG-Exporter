@@ -58,7 +58,7 @@
     <None Update="files\5e\config\Thumbnail.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\5e\config\thumbnail.png">
+    <None Update="files\5e\config\Thumbnail.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\5e\images\Battlemap.jpg">
