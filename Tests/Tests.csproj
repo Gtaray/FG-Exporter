@@ -19,16 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="files\5e\campaigns\FGE\campaign.xml">
+    <None Update="files\5e\campaigns\5e\campaign.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\5e\campaigns\FGE\db.xml">
+    <None Update="files\5e\campaigns\5e\db.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\5e\campaigns\FGE\images\Sample Images\Test Map 3.jpg">
+    <None Update="files\5e\campaigns\5e\images\Sample Images\Test Map 3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\5e\campaigns\FGE\images\Test Map.jpg">
+    <None Update="files\5e\campaigns\5e\images\Test Map.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\5e\config\Any Ruleset, Player Module.json">

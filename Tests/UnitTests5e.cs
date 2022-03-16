@@ -10,7 +10,7 @@ namespace Tests
     [TestClass]
     public class UnitTests5e
     {
-        public string campaignFolderPath = "files/5e/campaigns/FGE";
+        public string campaignFolderPath = "files/5e/campaigns";
         public string output = "files/output";
 
         // Tests all combinations of flags when exporting all content
@@ -29,7 +29,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -84,7 +84,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -136,7 +136,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -191,7 +191,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -246,7 +246,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -301,7 +301,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -356,7 +356,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -411,7 +411,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -466,7 +466,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -521,7 +521,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -572,7 +572,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -623,7 +623,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
@@ -675,7 +675,7 @@ namespace Tests
 
             // Get the test files
             string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
-            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
             FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
