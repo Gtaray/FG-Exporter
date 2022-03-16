@@ -41,15 +41,22 @@ namespace FGE
                 AddExportNode(export, item.Key, item.Value);
             }
 
-            // Remove all locked and allowplayerdrawing nodes from every element
+            // Remove all locked, allowplayerdrawing, and public nodes from every element
             export.Descendants("locked").Remove();
             export.Descendants("allowplayerdrawing").Remove();
+            export.Descendants("public").Remove();
 
             // Sort the elements directly under the root alphabetically
             //var sorted = export.Elements().OrderBy(e => e.Name.ToString()).ToList();
             //export.RemoveAll();
             //export.Add(sorted);
             export.SortElements();
+            var entries = export.Descendants("entries").FirstOrDefault();
+            if (entries != null)
+            {
+                entries.SortElements();
+            }
+            
 
             // Sort elements in the reference element
             if (export.Element("reference") != null)
@@ -129,7 +136,9 @@ namespace FGE
 
             foreach (RecordTypeEntry typeconfig in Config.RecordTypes)
             {
-                string dbpath = string.IsNullOrEmpty(typeconfig.DbPath) ? typeconfig.RecordType : typeconfig.DbPath;
+                string dbpath = string.IsNullOrEmpty(typeconfig.DbPath) 
+                    ? typeconfig.RecordType 
+                    : typeconfig.DbPath;
 
 
                 var recordTypeElement = DB.Element(dbpath);
@@ -187,9 +196,7 @@ namespace FGE
                 if (!dict.ContainsKey(key))
                     dict[key] = new RecordValue(
                         record,
-                        typeconfig.LibraryName,
-                        typeconfig.DbPath,
-                        typeconfig.ReferencePath);
+                        typeconfig);
             }
 
             return dict;
@@ -220,11 +227,14 @@ namespace FGE
             }
             else
             {
-                string dbpath = string.IsNullOrEmpty(record.DbPath) ? key.RecordType : record.DbPath;
-                tElement = parent.Element(dbpath);
+                string modulepath
+                    = string.IsNullOrEmpty(record.ModulePath)
+                    ? key.RecordType 
+                    : record.ModulePath;
+                tElement = parent.Element(modulepath);
                 if (tElement == null)
                 {
-                    tElement = new XElement(dbpath);
+                    tElement = new XElement(modulepath);
                     parent.Add(tElement);
                 }
             }
@@ -325,15 +335,15 @@ namespace FGE
             if (recordtype.Element("librarylink") == null)
             {
                 XElement librarylink = new XElement("librarylink", new XAttribute("type", "windowreference"));
-                librarylink.Add(new XElement("class", "reference_list"));
-                librarylink.Add(new XElement("recordname", ".."));
+                librarylink.Add(new XElement("class", value.LibrarylinkClass));
+                librarylink.Add(new XElement("recordname", value.LibrarylinkRecordName));
                 recordtype.Add(librarylink);
             }
             if (recordtype.Element("name") == null)
             {
                 recordtype.Add(new XElement("name", value.LibraryLabel, new XAttribute("type", "string")));
             }
-            if (recordtype.Element("recordtype") == null)
+            if (recordtype.Element("recordtype") == null && value.IncludeLibraryRecordType)
             {
                 recordtype.Add(new XElement("recordtype", typeconfig.RecordType, new XAttribute("type", "string")));
             }

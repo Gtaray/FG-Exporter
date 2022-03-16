@@ -47,11 +47,118 @@
 			</text>
 		</id-00001>
 	</background>
-	<battle />
+	<battle>
+		<id-00001>
+			<exp type="number">0</exp>
+			<name type="string">Test Encounter</name>
+			<npclist />
+		</id-00001>
+	</battle>
+	<battlerandom>
+		<id-00001>
+			<name type="string">Random Encounter</name>
+			<npclist />
+		</id-00001>
+	</battlerandom>
 	<calendar>
 		<public />
 	</calendar>
-	<charsheet />
+	<charsheet>
+		<id-00001>
+			<abilities>
+				<charisma>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</charisma>
+				<constitution>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</constitution>
+				<dexterity>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</dexterity>
+				<intelligence>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</intelligence>
+				<strength>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</strength>
+				<wisdom>
+					<bonus type="number">0</bonus>
+					<save type="number">0</save>
+					<savemodifier type="number">0</savemodifier>
+					<saveprof type="number">0</saveprof>
+					<score type="number">10</score>
+				</wisdom>
+			</abilities>
+			<backgroundlink type="windowreference">
+				<class />
+				<recordname />
+			</backgroundlink>
+			<classes />
+			<defenses>
+				<ac>
+					<armor type="number">0</armor>
+					<misc type="number">0</misc>
+					<prof type="number">1</prof>
+					<shield type="number">0</shield>
+					<temporary type="number">0</temporary>
+					<total type="number">10</total>
+				</ac>
+			</defenses>
+			<hp>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+				<wounds type="number">0</wounds>
+			</hp>
+			<initiative>
+				<misc type="number">0</misc>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+			</initiative>
+			<level type="number">0</level>
+			<name type="string">Test Character</name>
+			<perception type="number">10</perception>
+			<perceptionmodifier type="number">0</perceptionmodifier>
+			<profbonus type="number">2</profbonus>
+			<racelink type="windowreference">
+				<class />
+				<recordname />
+			</racelink>
+			<skilllist>
+				<id-00001>
+					<name type="string">Perception</name>
+					<stat type="string">wisdom</stat>
+				</id-00001>
+			</skilllist>
+			<speed>
+				<armor type="number">0</armor>
+				<base type="number">0</base>
+				<misc type="number">0</misc>
+				<temporary type="number">0</temporary>
+				<total type="number">0</total>
+			</speed>
+			<token type="token"></token>
+		</id-00001>
+	</charsheet>
 	<class>
 		<id-00001>
 			<abilities>
@@ -4530,101 +4637,113 @@
 	</currencies>
 	<effects>
 		<public />
+		<id-00001>
+			<public />
+			<duration type="number">1</duration>
+			<isgmonly type="number">0</isgmonly>
+			<label type="string">Test Effect</label>
+		</id-00001>
 	</effects>
-	<encounter />
+	<encounter>
+		<id-00001>
+			<name type="string">Test Story</name>
+			<text type="formattedtext">
+				<p />
+			</text>
+		</id-00001>
+	</encounter>
 	<export>
 		<anyruleset type="number">0</anyruleset>
 		<author type="string">George Taray</author>
 		<category type="string">Sample</category>
 		<displayname type="string">Sample Campaign</displayname>
-		<file type="string">fge</file>
 		<name type="string">FGE Sample</name>
 		<playervisible type="number">0</playervisible>
 		<readonly type="number">0</readonly>
 		<recordtypes>
 			<background>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</background>
 			<battle>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</battle>
 			<battlerandom>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</battlerandom>
 			<charsheet>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</charsheet>
 			<class>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</class>
 			<effect>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</effect>
 			<feat>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</feat>
 			<image>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</image>
 			<item>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</item>
 			<itemtemplate>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</itemtemplate>
 			<modifier>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</modifier>
 			<npc>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</npc>
 			<quest>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</quest>
 			<race>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</race>
 			<referencemanualpage>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</referencemanualpage>
 			<skill>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</skill>
 			<spell>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</spell>
 			<story>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</story>
 			<storytemplate>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</storytemplate>
 			<table>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</table>
 			<treasureparcel>
 				<entries />
-				<select type="number">1</select>
+				<select type="number">0</select>
 			</treasureparcel>
 		</recordtypes>
 		<recordviews>
@@ -4681,6 +4800,7 @@
 			<image type="image">
 				<allowplayerdrawing>on</allowplayerdrawing>
 				<grid>on</grid>
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Battlemap.jpg</name>
@@ -4696,6 +4816,7 @@
 		<id-00002>
 			<image type="image">
 				<allowplayerdrawing>on</allowplayerdrawing>
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map.jpg</name>
@@ -4711,6 +4832,7 @@
 		<id-00003>
 			<image type="image">
 				<allowplayerdrawing>on</allowplayerdrawing>
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map 2.jpg</name>
@@ -4726,6 +4848,7 @@
 		<id-00004>
 			<image type="image">
 				<allowplayerdrawing>on</allowplayerdrawing>
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map 3.jpg</name>
@@ -5036,6 +5159,17 @@
 			</id-00010>
 		</category>
 	</item>
+	<itemtemplate>
+		<id-00001>
+			<ac type="number">0</ac>
+			<bonus type="number">0</bonus>
+			<description type="formattedtext">
+				<p />
+			</description>
+			<name type="string">Item Template</name>
+			<weight type="number">0</weight>
+		</id-00001>
+	</itemtemplate>
 	<languages>
 		<public />
 		<id-00001>
@@ -5138,6 +5272,12 @@
 	</languages>
 	<modifiers>
 		<public />
+		<id-00001>
+			<public />
+			<bonus type="number">0</bonus>
+			<isgmonly type="number">0</isgmonly>
+			<label type="string">Test Modifier</label>
+		</id-00001>
 	</modifiers>
 	<motd>
 		<public />
@@ -5199,10 +5339,13 @@
 				</id-00006>
 			</actions>
 			<alignment type="string">lawful evil</alignment>
+			<bonusactions />
 			<cr type="string">16</cr>
 			<damageimmunities type="string">lightning</damageimmunities>
 			<hd type="string">(18d12 + 108)</hd>
 			<hp type="number">225</hp>
+			<innatespells />
+			<lairactions />
 			<languages type="string">Common, Draconic</languages>
 			<legendaryactions>
 				<id-00001>
@@ -5224,11 +5367,16 @@
 			</legendaryactions>
 			<locked type="number">1</locked>
 			<name type="string">Adult Blue Dragon</name>
+			<reactions />
 			<savingthrows type="string">Dex +5, Con +11, Wis +7, Cha +9</savingthrows>
 			<senses type="string">blindsight 60 ft., darkvision 120 ft., passive Perception 22</senses>
 			<size type="string">Huge</size>
 			<skills type="string">Perception +12, Stealth +5</skills>
 			<speed type="string">40 ft., burrow 30 ft., fly 80 ft.</speed>
+			<spells />
+			<text type="formattedtext">
+				<p />
+			</text>
 			<token type="token">tokens/adultbluedragon.png@DD5E SRD Bestiary</token>
 			<traits>
 				<id-00001>
@@ -5754,7 +5902,15 @@
 	<partysheet>
 		<public />
 	</partysheet>
-	<quest />
+	<quest>
+		<id-00001>
+			<description type="formattedtext">
+				<p />
+			</description>
+			<name type="string">Test Quest</name>
+			<xp type="number">0</xp>
+		</id-00001>
+	</quest>
 	<race>
 		<id-00001>
 			<locked type="number">1</locked>
@@ -6524,6 +6680,14 @@
 			<source type="string">Cleric, Wizard</source>
 		</id-00006>
 	</spell>
+	<storytemplate>
+		<id-00001>
+			<name type="string">Test Story Template</name>
+			<text type="formattedtext">
+				<p />
+			</text>
+		</id-00001>
+	</storytemplate>
 	<tables>
 		<id-00001>
 			<description type="string">Acolyte Personality Trait Table</description>
@@ -7156,5 +7320,32 @@
 		</id-00007>
 	</tables>
 	<temp />
-	<treasureparcels />
+	<treasureparcels>
+		<id-00001>
+			<coinlist>
+				<id-00001>
+					<amount type="number">0</amount>
+					<description type="string">PP</description>
+				</id-00001>
+				<id-00002>
+					<amount type="number">0</amount>
+					<description type="string">GP</description>
+				</id-00002>
+				<id-00003>
+					<amount type="number">0</amount>
+					<description type="string">EP</description>
+				</id-00003>
+				<id-00004>
+					<amount type="number">0</amount>
+					<description type="string">SP</description>
+				</id-00004>
+				<id-00005>
+					<amount type="number">0</amount>
+					<description type="string">CP</description>
+				</id-00005>
+			</coinlist>
+			<itemlist />
+			<name type="string">Test parcel</name>
+		</id-00001>
+	</treasureparcels>
 </root>

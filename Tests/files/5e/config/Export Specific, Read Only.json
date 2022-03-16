@@ -1,0 +1,174 @@
+{
+  "outputFolder": "files/output",
+  "fileName": "5e_ReadOnlyExportSpecific",
+  "thumbnail": "",
+  "name": "FGE Sample",
+  "displayName": "Sample Campaign",
+  "category": "Sample",
+  "author": "George Taray",
+  "readOnly": true,
+  "playerModule": false,
+  "anyRuleset": false,
+  "ruleset": "5E",
+  "dataImagesFolder": "files/5e",
+  "recordtypes": [
+    {
+      "recordType": "background",
+      "libraryName": "Backgrounds",
+      "referencePath": "backgrounddata",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "battle",
+      "libraryName": "Encounters",
+      "referencePath": "battles",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "battlerandom",
+      "libraryName": "Encounters (Random)",
+      "referencePath": "battlerandoms",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "charsheet",
+      "modulePath": "pregencharsheet",
+      "libraryName": "Pregenerated Characters",
+      "librarylinkClass": "pregencharselect",
+      "librarylinkRecordName": "pregencharsheet",
+      "includeLibraryRecordType": false,
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "class",
+      "libraryName": "Classes",
+      "referencePath": "classdata",
+      "records": [
+        "id-00004"
+      ]
+    },
+    {
+      "recordType": "effects"
+    },
+    {
+      "recordType": "story",
+      "libraryName": "Story",
+      "dbPath": "encounter",
+      "modulePath": "encounter",
+      "referencePath": "encounters",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "feat",
+      "libraryName": "Feats",
+      "referencePath": "featdata",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "image",
+      "libraryName": "Images",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "item",
+      "libraryName": "Items",
+      "referencePath": "equipmentdata",
+      "records": [
+        "id-00007"
+      ]
+    },
+    {
+      "recordType": "itemtemplate",
+      "libraryName": "Item Templates",
+      "referencePath": "magicrefitemdata",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "modifiers"
+    },
+    {
+      "recordType": "npc",
+      "libraryName": "NPCs",
+      "referencePath": "npcdata",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "quest",
+      "libraryName": "Quests",
+      "referencePath": "questdata",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "race",
+      "libraryName": "Races",
+      "referencePath": "racedata",
+      "records": [
+        "id-00003"
+      ]
+    },
+    {
+      "recordType": "skill",
+      "libraryName": "Skills",
+      "referencePath": "skilldata",
+      "records": [
+        "id-00002"
+      ]
+    },
+    {
+      "recordType": "spell",
+      "libraryName": "Spells",
+      "referencePath": "spelldata",
+      "records": [
+        "id-00006"
+      ]
+    },
+    {
+      "recordType": "storytemplate",
+      "libraryName": "Story Templates",
+      "referencePath": "storytemplates",
+      "records": [
+        "id-00001"
+      ]
+    },
+    {
+      "recordType": "table",
+      "libraryName": "Tables",
+      "dbPath": "tables",
+      "modulePath": "tables",
+      "referencePath": "tables",
+      "records": [
+        "id-00005"
+      ]
+    },
+    {
+      "recordType": "treasureparcel",
+      "libraryName": "Parcels",
+      "dbPath": "treasureparcels",
+      "modulePath": "treasureparcels",
+      "referencePath": "treasureparcels",
+      "records": [
+        "id-00001"
+      ]
+    }
+  ]
+}

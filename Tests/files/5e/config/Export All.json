@@ -51,7 +51,8 @@
     {
       "recordType": "table",
       "libraryName": "Tables",
-      "dbPath": "tables"
+      "dbPath": "tables",
+      "modulePath": "tables"
     }
   ]
 }

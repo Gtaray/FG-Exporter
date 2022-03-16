@@ -60,6 +60,7 @@
       "recordType": "table",
       "libraryName": "Tables",
       "dbPath": "tables",
+      "modulePath": "tables",
       "referencePath": "tables"
     }
   ]

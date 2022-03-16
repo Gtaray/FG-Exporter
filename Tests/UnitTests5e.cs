@@ -11,6 +11,7 @@ namespace Tests
     public class UnitTests5e
     {
         public string campaignFolderPath = "files/5e/campaigns/FGE";
+        public string output = "files/output";
 
         // Tests all combinations of flags when exporting all content
         [TestMethod]
@@ -505,5 +506,209 @@ namespace Tests
         }
 
         // Tests various flags when exporting specific content
+        [TestMethod]
+        public void NoFlagsExportSpecific()
+        {
+            string modfile = "files/output/5e_ExportSpecific.mod";
+            string controlFolder = "files/5e/modules/Export Specific";
+            string workingdir = "files/output/5e_ExportSpecific";
+            string jsonfile = "files/5e/config/Export Specific.json";
+            // Delete file from a previous run of this test
+            if (File.Exists(modfile))
+                File.Delete(modfile);
+            if (Directory.Exists(workingdir))
+                Directory.Delete(workingdir, true);
+
+            // Get the test files
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+
+            // Run the converter
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
+
+            // Asserts
+            Assert.IsTrue(File.Exists(modfile));
+
+            using (var file = File.OpenRead(modfile))
+            using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
+            {
+                Assert.AreEqual(zip.Entries.Count, 3);
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "db.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Battlemap.jpg"));
+
+                using (var stream = zip.Entries.First(e => e.FullName == "db.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "db.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+
+                using (var stream = zip.Entries.First(e => e.FullName == "definition.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+            }
+        }
+
+        [TestMethod]
+        public void ReadOnlyExportSpecific()
+        {
+            string modfile = "files/output/5e_ReadOnlyExportSpecific.mod";
+            string controlFolder = "files/5e/modules/Export Specific, Read Only";
+            string workingdir = "files/output/5e_ReadOnlyExportSpecific";
+            string jsonfile = "files/5e/config/Export Specific, Read Only.json";
+            // Delete file from a previous run of this test
+            if (File.Exists(modfile))
+                File.Delete(modfile);
+            if (Directory.Exists(workingdir))
+                Directory.Delete(workingdir, true);
+
+            // Get the test files
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+
+            // Run the converter
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
+
+            // Asserts
+            Assert.IsTrue(File.Exists(modfile));
+
+            using (var file = File.OpenRead(modfile))
+            using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
+            {
+                Assert.AreEqual(zip.Entries.Count, 3);
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "db.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Battlemap.jpg"));
+
+                using (var stream = zip.Entries.First(e => e.FullName == "db.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "db.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+
+                using (var stream = zip.Entries.First(e => e.FullName == "definition.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+            }
+        }
+
+        [TestMethod]
+        public void AnyRulesetExportSpecific()
+        {
+            string modfile = "files/output/5e_AnyRulesetExportSpecific.mod";
+            string controlFolder = "files/5e/modules/Export Specific, Any Ruleset";
+            string workingdir = "files/output/5e_AnyRulesetExportSpecific";
+            string jsonfile = "files/5e/config/Export Specific, Any Ruleset.json";
+            // Delete file from a previous run of this test
+            if (File.Exists(modfile))
+                File.Delete(modfile);
+            if (Directory.Exists(workingdir))
+                Directory.Delete(workingdir, true);
+
+            // Get the test files
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+
+            // Run the converter
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
+
+            // Asserts
+            Assert.IsTrue(File.Exists(modfile));
+
+            using (var file = File.OpenRead(modfile))
+            using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
+            {
+                Assert.AreEqual(zip.Entries.Count, 3);
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "db.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Battlemap.jpg"));
+
+                using (var stream = zip.Entries.First(e => e.FullName == "db.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "db.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+
+                using (var stream = zip.Entries.First(e => e.FullName == "definition.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+            }
+        }
+
+        [TestMethod]
+        public void PlayerModuleExportSpecific()
+        {
+            string modfile = "files/output/5e_PlayerModuleExportSpecific.mod";
+            string controlFolder = "files/5e/modules/Export Specific, Player Module";
+            string workingdir = "files/output/5e_PlayerModuleExportSpecific";
+            string jsonfile = "files/5e/config/Export Specific, Player Module.json";
+
+            // Delete file from a previous run of this test
+            if (File.Exists(modfile))
+                File.Delete(modfile);
+            if (Directory.Exists(workingdir))
+                Directory.Delete(workingdir, true);
+
+            // Get the test files
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath);
+
+            // Run the converter
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile });
+
+            // Asserts
+            Assert.IsTrue(File.Exists(modfile));
+
+            using (var file = File.OpenRead(modfile))
+            using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
+            {
+                Assert.AreEqual(zip.Entries.Count, 3);
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "client.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Battlemap.jpg"));
+
+                using (var stream = zip.Entries.First(e => e.FullName == "client.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "client.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+
+                using (var stream = zip.Entries.First(e => e.FullName == "definition.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+            }
+        }
     }
 }

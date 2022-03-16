@@ -48,17 +48,21 @@ namespace FGE
 
     public struct RecordValue
     {
+        private readonly RecordTypeEntry _config;
         public readonly XElement Record;
-        public readonly string LibraryLabel;
-        public readonly string DbPath;
-        public readonly string ReferencePath;
+        public string RecordType => _config.RecordType;
+        public string LibraryLabel => _config.LibraryName;
+        public string DbPath => _config.DbPath;
+        public string ModulePath => _config.ModulePath;
+        public string ReferencePath => _config.ReferencePath;
+        public string LibrarylinkClass => _config.LibrarylinkClass;
+        public string LibrarylinkRecordName => _config.LibrarylinkRecordName;
+        public bool IncludeLibraryRecordType => _config.IncludeLibraryRecordType;
 
-        public RecordValue(XElement record, string label, string dbPath = "", string referencePath = "")
+        public RecordValue(XElement record, RecordTypeEntry config)
         {
             this.Record = record;
-            this.LibraryLabel = label;
-            this.DbPath = dbPath;
-            this.ReferencePath = referencePath;
+            this._config = config;
         }
     }
 }

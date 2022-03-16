@@ -4500,6 +4500,7 @@
 		<id-00001>
 			<image type="image">
 				<grid>on</grid>
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Battlemap.jpg</name>
@@ -4514,6 +4515,7 @@
 		</id-00001>
 		<id-00002>
 			<image type="image">
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map.jpg</name>
@@ -4528,6 +4530,7 @@
 		</id-00002>
 		<id-00003>
 			<image type="image">
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map 2.jpg</name>
@@ -4542,6 +4545,7 @@
 		</id-00003>
 		<id-00004>
 			<image type="image">
+				<color>#66FFFFFF</color>
 				<layers>
 					<layer>
 						<name>Test Map 3.jpg</name>
@@ -4987,10 +4991,13 @@
 				</id-00006>
 			</actions>
 			<alignment type="string">lawful evil</alignment>
+			<bonusactions />
 			<cr type="string">16</cr>
 			<damageimmunities type="string">lightning</damageimmunities>
 			<hd type="string">(18d12 + 108)</hd>
 			<hp type="number">225</hp>
+			<innatespells />
+			<lairactions />
 			<languages type="string">Common, Draconic</languages>
 			<legendaryactions>
 				<id-00001>
@@ -5011,11 +5018,16 @@
 				</id-00004>
 			</legendaryactions>
 			<name type="string">Adult Blue Dragon</name>
+			<reactions />
 			<savingthrows type="string">Dex +5, Con +11, Wis +7, Cha +9</savingthrows>
 			<senses type="string">blindsight 60 ft., darkvision 120 ft., passive Perception 22</senses>
 			<size type="string">Huge</size>
 			<skills type="string">Perception +12, Stealth +5</skills>
 			<speed type="string">40 ft., burrow 30 ft., fly 80 ft.</speed>
+			<spells />
+			<text type="formattedtext">
+				<p />
+			</text>
 			<token type="token">tokens/adultbluedragon.png@DD5E SRD Bestiary</token>
 			<traits>
 				<id-00001>
