@@ -19,31 +19,106 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="files\campaigns\FGE\campaign.xml">
+    <None Update="files\5e\campaigns\FGE\campaign.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\campaigns\FGE\db.xml">
+    <None Update="files\5e\campaigns\FGE\db.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\campaigns\FGE\images\Sample Images\Test Map 3.jpg">
+    <None Update="files\5e\campaigns\FGE\images\Sample Images\Test Map 3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\campaigns\FGE\images\Test Map.jpg">
+    <None Update="files\5e\campaigns\FGE\images\Test Map.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\config\Export All.json">
+    <None Update="files\5e\config\Any Ruleset, Player Module.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\images\Battlemap.jpg">
+    <None Update="files\5e\config\Any Ruleset, Read Only, Player Module.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\images\Sample Image\Test Map 2.jpg">
+    <None Update="files\5e\config\Any Ruleset, Read Only.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\modules\Export All\db.xml">
+    <None Update="files\5e\config\Any Ruleset.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\modules\Export All\definition.xml">
+    <None Update="files\5e\config\Export All.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\config\Player Module.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\config\Read Only, Player Module.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\config\Read Only.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\config\Thumbnail.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\config\thumbnail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\images\Battlemap.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\images\Sample Image\Test Map 2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Player Module\client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Player Module\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Read Only, Player Module\client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Read Only, Player Module\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Read Only\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset, Read Only\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Any Ruleset\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Export All\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Export All\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Player Module\client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Player Module\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Read Only, Player Module\client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Read Only, Player Module\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Read Only\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Read Only\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Thumbnail\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\5e\modules\Thumbnail\definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

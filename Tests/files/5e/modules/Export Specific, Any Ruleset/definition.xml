@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="8.1|CoreRPG:5">
+	<name>FGE Sample</name>
+	<displayname>Sample Campaign</displayname>
+	<category>Sample</category>
+	<author>George Taray</author>
+</root>

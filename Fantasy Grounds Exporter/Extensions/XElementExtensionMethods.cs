@@ -10,6 +10,12 @@ namespace FGE.Extensions
 {
     public static class XElementExtensionMethods
     {
-        
+        public static void SortElements(this XElement root)
+        {
+            if (root == null) return;
+            var sorted = root.Elements().OrderBy(e => e.Name.ToString()).ToList();
+            root.RemoveNodes();
+            root.Add(sorted);
+        }
     }
 }
