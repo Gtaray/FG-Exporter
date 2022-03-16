@@ -51,12 +51,14 @@ namespace FGE
         public readonly XElement Record;
         public readonly string LibraryLabel;
         public readonly string DbPath;
+        public readonly string ReferencePath;
 
-        public RecordValue(XElement record, string label, string dbPath)
+        public RecordValue(XElement record, string label, string dbPath = "", string referencePath = "")
         {
             this.Record = record;
             this.LibraryLabel = label;
             this.DbPath = dbPath;
+            this.ReferencePath = referencePath;
         }
     }
 }

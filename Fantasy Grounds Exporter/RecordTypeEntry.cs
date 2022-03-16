@@ -5,6 +5,7 @@
         public string RecordType { get; set; } = "";
         public string LibraryName { get; set; } = "";
         public string DbPath { get; set; } = "";
+        public string ReferencePath { get; set; } = "";
         public List<string> Records { get; set; } = new List<string>();
 
         public override string ToString()
