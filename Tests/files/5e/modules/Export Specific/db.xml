@@ -1275,6 +1275,9 @@
 					<total type="number">10</total>
 				</ac>
 			</defenses>
+			<encumbrance>
+				<load type="number">0</load>
+			</encumbrance>
 			<hp>
 				<temporary type="number">0</temporary>
 				<total type="number">0</total>
