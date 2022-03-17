@@ -1,4 +1,4 @@
-name: .NET
+name: Publish Release
 
 on:
   workflow_dispatch:
@@ -22,10 +22,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish -r win-x64 --self-contained
+      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "fge.exe"
+        artifacts: "/home/runner/work/FG-Exporter/FG-Exporter/FGE.Console/bin/Release/net6.0/win-x64/publish/fge.exe"
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
