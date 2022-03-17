@@ -14,6 +14,12 @@
         public string LibraryName { get; set; } = "";
 
         /// <summary>
+        /// Element name where the module's library entry is stored (within library.entries)
+        /// Defaults to RecordType
+        /// </summary>
+        public string LibraryPath { get; set; } = "";
+
+        /// <summary>
         /// Element name where records are found in the campaign DB.xml
         /// Defaults to RecordType
         /// </summary>

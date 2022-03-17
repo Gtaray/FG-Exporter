@@ -1,0 +1,24 @@
+{
+    "outputFolder": "files/output",
+    "fileName": "corerpg_refman_playermodule",
+    "thumbnail": "",
+    "name": "CoreRPG RefMan Test",
+    "displayName": "CoreRPG Reference Manual Test",
+    "category": "Test",
+    "author": "George Taray",
+    "readOnly": false,
+    "playerModule": true,
+    "anyRuleset": false,
+    "ruleset": "CoreRPG",
+    "fgDataFolder": "files/corerpg",
+    "recordtypes": [
+      {
+        "recordType": "reference",
+        "libraryName": "Reference Manual",
+        "libraryPath": "referencemanualpage",
+        "librarylinkClass": "reference_manual",
+        "librarylinkRecordName": "reference.refmanualindex",
+        "includeLibraryRecordType": false
+      }
+    ]
+  }

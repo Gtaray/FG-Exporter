@@ -111,12 +111,17 @@ namespace FGE
             Dictionary<RecordKey, RecordValue> dict = new Dictionary<RecordKey, RecordValue>();
 
             // Start by getting all records in the parent element
-            IEnumerable<XElement> elementRecords = parent.Elements().Where(e => e.Name.ToString().StartsWith("id-"));
+            IEnumerable<XElement> elementRecords = parent
+                .Elements()
+                .Where(
+                    e => e.Name.ToString().StartsWith("id-") ||
+                    e.Name.ToString().StartsWith("refmanual"));
 
             // If the config specifies only specific records, then trim elementRecords to only ones that are listed in the config
             if (typeconfig.Records.Count > 0)
             {
-                elementRecords = elementRecords.Where(e => typeconfig.Records.Contains(e.Name.ToString()));
+                elementRecords = elementRecords
+                    .Where(e => typeconfig.Records.Contains(e.Name.ToString()));
             }
 
             // Iterate through those elements and create the dictionary
@@ -156,7 +161,16 @@ namespace FGE
                 if (image.Contains("@"))
                     continue;
 
-                var imageRecord = new ImageRecord(image, type);
+                ImageRecord imageRecord;
+                // If this bitmap is part of the reference manual, overwrite ImageType
+                if (node.Ancestors("refmanualdata").Any())
+                {
+                    imageRecord = new ImageRecord(image, ImageType.RefImage);
+                }
+                else
+                {
+                    imageRecord = new ImageRecord(image, type);
+                }
 
                 // Normalize bitmap path
                 node.SetValue(imageRecord.ModuleGraphic);
@@ -176,7 +190,7 @@ namespace FGE
             }
 
             // Get the bitmaps and tokens
-            GetImageFileFromDb(export, "bitmap", ImageType.Bitmap);
+            GetImageFileFromDb(export, "bitmap", ImageType.Image);
             GetImageFileFromDb(export, "token", ImageType.Token);
 
             // Remove all locked, allowplayerdrawing, and public nodes from every element
@@ -215,6 +229,7 @@ namespace FGE
         {
             // Get or create the element for the record type (spell, item, npc, etc).
             // If module is read only, then create the reference element as well
+
             XElement tElement;
             if (Config.ReadOnly && !string.IsNullOrEmpty(record.ReferencePath))
             {
@@ -222,8 +237,7 @@ namespace FGE
                 if (refElement == null)
                 {
                     refElement = new XElement(
-                        "reference", 
-                        new XAttribute("static", "true"));
+                        "reference");
                     parent.Add(refElement);
                 }
                 tElement = refElement.Element(record.ReferencePath);
@@ -245,6 +259,16 @@ namespace FGE
                     tElement = new XElement(modulepath);
                     parent.Add(tElement);
                 }
+            }
+
+            // We add this afterwards because a read only reference manual 
+            // Is a strange case where the root node is 'reference'.
+            // so we need to check after it's added.
+            if (Config.ReadOnly)
+            {
+                var refElement = parent.Element("reference");
+                if (refElement != null && refElement.Attribute("static") == null)
+                    refElement.Add(new XAttribute("static", "true"));
             }
 
             // Depending on if the record is in a category or not, we get or create the category. cElement is the parent of the record xml
@@ -332,10 +356,13 @@ namespace FGE
             // table objects are located in the 'tables' (plural) element of the db,
             // but the library lists them under 'table' (singular) element with record type 'table'. 
             // In that case, the objects go to the DB under 'tables', but are listed in the library as 'table'
-            XElement recordtype = entries.Element(typeconfig.RecordType);
+            string libraryPath = string.IsNullOrEmpty(typeconfig.LibraryPath)
+                ? typeconfig.RecordType
+                : typeconfig.LibraryPath;
+            XElement recordtype = entries.Element(libraryPath);
             if (recordtype == null)
             {
-                recordtype = new XElement(typeconfig.RecordType);
+                recordtype = new XElement(libraryPath);
                 entries.Add(recordtype);
             }
 
