@@ -1,0 +1,31 @@
+name: .NET
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Publish
+      run: dotnet publish -r win-x64 --self-contained
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "fge.exe"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        allowUpdates: true
