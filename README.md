@@ -36,7 +36,7 @@ The example file could be used for the 5e ruleset, and shows all possible record
 <details>
 <summary>Click to expand example configuration file</summary>
 
-```json
+```javascript
 {
     // Relative or absolute path to the folder where the mod file will be put
     // Relative paths are to where the executable is located
