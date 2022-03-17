@@ -70,6 +70,9 @@ namespace FGE.Models
                 File.Copy(thumbnailPath, Path.Combine(outputDir.FullName, thumbnailName));
             }
 
+            // Gather tokens that aren't on npcs
+            GetExportedTokens();
+
             // Get all the images into the module folder
             CopyImagesToWorkingDirectory(outputDir.FullName);
 
@@ -179,6 +182,15 @@ namespace FGE.Models
 
                 // Add for later handling
                 Images.Add(imageRecord);
+            }
+        }
+
+        // Get the tokens that are exported separate from NPCs
+        void GetExportedTokens()
+        {
+            foreach (string token in Config.Tokens)
+            {
+                Images.Add(new ImageRecord(token, ImageType.Token));
             }
         }
 

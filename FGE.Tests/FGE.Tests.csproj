@@ -220,6 +220,12 @@
     <None Update="files\corerpg\campaigns\refman\images\Maps\Nested Campaign Folder\HalfwayCamp.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\campaigns\refman\tokens\Campaign Nested Folder\Green Wyvern.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\campaigns\refman\tokens\Giant Crocodile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\config\Images.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -233,6 +239,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\config\Ref Man.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\config\Tokens, Specified.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\config\Tokens.json">
@@ -308,6 +317,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\modules\Ref Man\referenceimages\Maps\Nested Data Folder\HighlandPass.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Tokens, Specified\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Tokens, Specified\definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\modules\Tokens\db.xml">

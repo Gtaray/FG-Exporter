@@ -15,5 +15,6 @@
         public string Ruleset { get; set; } = "";
         public string FGDataFolder { get; set; } = "";
         public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
+        public List<string> Tokens { get; set; } = new List<string>();
     }
 }

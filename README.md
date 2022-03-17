@@ -206,6 +206,14 @@ The example file could be used for the 5e ruleset, and shows all possible record
             "modulePath": "treasureparcels",
             "referencePath": "treasureparcels",
         }
+    ],
+    // List of paths to any tokens to be exported. These are separate from any tokens exported as part of other records (like npcs).
+    // The paths for these tokens should be relative, either from the 'campaign/' folder if the token is located in the campaign, or from the 'tokens/' folder if the token is located in Fantasy Grounds' global token folder.
+    "tokens": [
+        "campaign/tokens/token.png", // This token is located in the campaign's token folder
+        "campaign/tokens/npcs/npc_token.png", // This token is located in the 'npcs' folder, which is located in the campaign's token folder
+        "tokens/Monsters/monster_token.png", // This token is located in the 'Monsters' folder, which is located in the global token folder
+        "tokens/PCs/pc_token.png"   // This token is located in the 'PCs' folder, which is located in the global token folder
     ]
 }
 ```
@@ -221,10 +229,6 @@ When creating your own configuration file you can start with the above example. 
 This exporter has only been tested with the **CoreRPG** and **D&D 5e** rulesets. It _should_ be flexible enough to support any ruleset, but there are likely some rulesets that operate a little differently than normal. In these cases, feel free to submit an Issue on this github, leave a comment on the Fantasy Grounds forum, or message me through Discord (@Saagael#5728).
 
 ## Future Updates
-
-### Export Tokens
-
-Tokens contained in any records will be exported, but currently the exporter doesn't handle exporting specific tokens. This will be added in the next update.
 
 ### [Ghost Writer ](https://github.com/MeAndUnique/GhostWriter) Support
 
