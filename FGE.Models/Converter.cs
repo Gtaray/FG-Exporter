@@ -1,4 +1,6 @@
-﻿using FGE.Extensions;
+﻿using FGE.Entities;
+using FGE.Entities.Configuration;
+using FGE.Models.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
@@ -9,9 +11,9 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace FGE
+namespace FGE.Models
 {
-    internal class Converter
+    public class Converter
     {
         ExportConfig Config { get; set; }
         string CampaignFolder { get; set; }
@@ -83,7 +85,7 @@ namespace FGE
         {
             Dictionary<RecordKey, RecordValue> dict = new Dictionary<RecordKey, RecordValue>();
 
-            foreach (RecordTypeEntry typeconfig in Config.RecordTypes)
+            foreach (RecordTypeConfig typeconfig in Config.RecordTypes)
             {
                 string dbpath = string.IsNullOrEmpty(typeconfig.DbPath) 
                     ? typeconfig.RecordType 
@@ -106,7 +108,7 @@ namespace FGE
             return dict;
         }
 
-        Dictionary<RecordKey, RecordValue> GetDbRecords(XElement parent, RecordTypeEntry typeconfig, bool noCategory = false)
+        Dictionary<RecordKey, RecordValue> GetDbRecords(XElement parent, RecordTypeConfig typeconfig, bool noCategory = false)
         {
             Dictionary<RecordKey, RecordValue> dict = new Dictionary<RecordKey, RecordValue>();
 
@@ -311,7 +313,7 @@ namespace FGE
         void AddExportLibraryNode(XElement parent, RecordKey key, RecordValue value)
         {
             // Get the configuration for this particular type
-            RecordTypeEntry typeconfig = Config.RecordTypes
+            RecordTypeConfig typeconfig = Config.RecordTypes
                 .FirstOrDefault(t => t.RecordType == key.RecordType);
             if (typeconfig == null)
                 throw new InvalidOperationException($"Could not find configuration for record type {key.RecordType}");

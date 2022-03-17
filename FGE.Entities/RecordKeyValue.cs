@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FGE.Entities.Configuration;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
-#nullable enable
-namespace FGE
+namespace FGE.Entities
 {
     public struct RecordKey
     {
@@ -31,6 +26,7 @@ namespace FGE
             return $"{RecordType}.{Category}.{Id}";
         }
 
+#nullable enable
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
             RecordKey? other = obj as RecordKey?;
@@ -39,6 +35,7 @@ namespace FGE
                 string.Equals(other.Value.Category, Category) &&
                 string.Equals(other.Value.Id, Id);
         }
+#nullable disable
 
         public override int GetHashCode()
         {
@@ -48,7 +45,7 @@ namespace FGE
 
     public struct RecordValue
     {
-        private readonly RecordTypeEntry _config;
+        private readonly RecordTypeConfig _config;
         public readonly XElement Record;
         public string RecordType => _config.RecordType;
         public string LibraryLabel => _config.LibraryName;
@@ -59,11 +56,10 @@ namespace FGE
         public string LibrarylinkRecordName => _config.LibrarylinkRecordName;
         public bool IncludeLibraryRecordType => _config.IncludeLibraryRecordType;
 
-        public RecordValue(XElement record, RecordTypeEntry config)
+        public RecordValue(XElement record, RecordTypeConfig config)
         {
             this.Record = record;
             this._config = config;
         }
     }
 }
-#nullable disable

@@ -1,6 +1,6 @@
-﻿namespace FGE
+﻿namespace FGE.Entities.Configuration
 {
-    public class RecordTypeEntry
+    public class RecordTypeConfig
     {
         /// <summary>
         /// Name of the record type

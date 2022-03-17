@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FGE
+﻿namespace FGE.Entities.Configuration
 {
     public class ExportConfig
     {
@@ -20,6 +14,6 @@ namespace FGE
         public bool AnyRuleset { get; set; } = false;
         public string Ruleset { get; set; } = "";
         public string FGDataFolder { get; set; } = "";
-        public List<RecordTypeEntry> RecordTypes { get; set; } = new List<RecordTypeEntry>();
+        public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
     }
 }

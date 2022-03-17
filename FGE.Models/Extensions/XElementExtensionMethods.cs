@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace FGE.Extensions
+namespace FGE.Models.Extensions
 {
     public static class XElementExtensionMethods
     {

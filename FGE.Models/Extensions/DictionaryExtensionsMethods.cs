@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FGE.Extensions
+namespace FGE.Models.Extensions
 {
     internal static class DictionaryExtensionsMethods
     {

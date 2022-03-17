@@ -1,11 +1,7 @@
 ﻿using CommandLine;
-using FGE.Extensions;
+using FGE.Entities.Configuration;
+using FGE.Models;
 using Newtonsoft.Json;
-using System.Diagnostics.CodeAnalysis;
-using System.IO.Compression;
-using System.Text.RegularExpressions;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace FGE {
     public class FantasyGroundsExporter

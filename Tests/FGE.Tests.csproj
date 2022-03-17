@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fantasy Grounds Exporter\Fantasy Grounds Exporter.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="files\5e\campaigns\5e\campaign.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
