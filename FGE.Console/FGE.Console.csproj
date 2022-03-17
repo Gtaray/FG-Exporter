@@ -12,6 +12,8 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
 	    <PublishSingleFile>true</PublishSingleFile>
+	    <Authors>George Taray</Authors>
+	    <Product>Fantasy Grounds Module Exporter</Product>
     </PropertyGroup>
 
   <ItemGroup>
