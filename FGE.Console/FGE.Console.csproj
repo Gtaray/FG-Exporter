@@ -3,15 +3,16 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-	<PublishSingleFile>true</PublishSingleFile>
-	<SelfContained>true</SelfContained>
-	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	<PublishReadyToRun>true</PublishReadyToRun>
     <RootNamespace>FGE.Console</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <AssemblyName>fge</AssemblyName>
   </PropertyGroup>
+    <PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+	    <PublishSingleFile>true</PublishSingleFile>
+    </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
