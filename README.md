@@ -6,9 +6,9 @@ Command line interface that exports Fantasy Grounds campaigns to modules complet
 
 There are two primary reasons to want to create modules outside of Fantasy Grounds.
 
-1. If you keep your modules in any kind of source control, then this tool allows you to build modules automatically as part of your CI/CD process. It could happen automatically when you push a new version, and you wouldn't have to ever worry about exporting the module through Fantasy Grounds again.
+1. If you keep your modules in any kind of source control then this tool allows you to build modules automatically as part of your CI/CD process. It could happen automatically when you push a new version, and you wouldn't have to ever worry about exporting the module through Fantasy Grounds again.
 
-2. If you develop modules that require exporting multiple versions of (a player and GM module for example), you could define two configuration files, one for each build, and run the exporter for each. You couldn't have to worry about exporting the wrong data in the wrong module again
+2. If you develop modules that require exporting multiple versions of (a player and GM module for example), you could define two configuration files, one for each build, and run the exporter for each. You wouldn't have to worry about exporting data in the wrong module again
 
 ## How to Use
 
