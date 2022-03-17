@@ -19,7 +19,7 @@ namespace FGE
         public bool PlayerModule { get; set; } = false;
         public bool AnyRuleset { get; set; } = false;
         public string Ruleset { get; set; } = "";
-        public string DataImagesFolder { get; set; } = "";
+        public string FGDataFolder { get; set; } = "";
         public List<RecordTypeEntry> RecordTypes { get; set; } = new List<RecordTypeEntry>();
     }
 }

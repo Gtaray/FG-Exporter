@@ -1,0 +1,20 @@
+{
+    "outputFolder": "files/output",
+    "fileName": "corerpg_images",
+    "thumbnail": "",
+    "name": "CoreRPG Image Test",
+    "displayName": "CoreRPG Image Test",
+    "category": "Test",
+    "author": "George Taray",
+    "readOnly": false,
+    "playerModule": false,
+    "anyRuleset": false,
+    "ruleset": "CoreRPG",
+    "fgDataFolder": "files/corerpg",
+    "recordtypes": [
+      {
+        "recordType": "image",
+        "libraryName": "Images"
+      }
+    ]
+  }

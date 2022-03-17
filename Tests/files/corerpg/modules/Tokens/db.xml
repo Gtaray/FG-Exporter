@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<library>
+		<corerpgtokenstest static="true">
+			<categoryname type="string">Test</categoryname>
+			<name type="string">corerpgtokenstest</name>
+			<entries>
+				<npc>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">NPCs</name>
+					<recordtype type="string">npc</recordtype>
+				</npc>
+			</entries>
+		</corerpgtokenstest>
+	</library>
+	<npc>
+		<id-00001>
+			<name type="string">Campaign Token</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Giant Crocodile.png</token>
+		</id-00001>
+		<id-00002>
+			<name type="string">Data Token</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Griffin.png</token>
+		</id-00002>
+		<id-00003>
+			<name type="string">Module Token</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Medium/m.png@Letter Tokens</token>
+		</id-00003>
+	</npc>
+</root>

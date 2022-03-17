@@ -12,19 +12,24 @@ namespace FGE
         Data,
         Campaign
     }
+    public enum ImageType
+    {
+        Bitmap,
+        Token
+    }
     public class ImageRecord
     {
-        public readonly string Id;
-        public readonly string Bitmap;
+        public readonly string Graphic;
+        public readonly ImageType Type;
         public readonly ImageRecordSource Source;
 
-        public ImageRecord(string id, string bitmap)
+        public ImageRecord(string bitmap, ImageType type)
         {
-            this.Id = id;
-            this.Bitmap = bitmap;
+            this.Graphic = bitmap;
+            this.Type = type;
 
-            if (Bitmap == null)
-                throw new ArgumentException($"Bitmap was null for image record {Id}");
+            if (Graphic == null)
+                throw new ArgumentException($"Bitmap was null. File: {bitmap}");
 
             Source = ImageRecordSource.Data;
             if (bitmap.StartsWith("campaign/"))
@@ -33,15 +38,31 @@ namespace FGE
             }
         }
 
-        public string ModuleBitmap
+        public string SourceGraphic 
+        {
+            get
+            {
+                string filepath = Source == ImageRecordSource.Campaign
+                    ? Graphic.Substring(Graphic.IndexOf('/') + 1)
+                    : Graphic;
+                return filepath;
+            }
+        }
+
+        public string ModuleGraphic
         { 
             get
             {
-                if (Source == ImageRecordSource.Campaign)
-                {
-                    return Bitmap.Substring(Bitmap.IndexOf('/') + 1);
-                }
-                return Bitmap;
+                string moduleGraphic = Source == ImageRecordSource.Campaign
+                    ? Graphic.Substring(Graphic.IndexOf('/') + 1)
+                    : Graphic;
+                // Kind of jank, but exporting tokens gets rid of all hierarchical folders
+                // so we just want everything under a 'tokens' folder
+                // Also, have to use string concat here because Path.Combine uses backslash
+                // but the FG exporter uses forward slashes.
+                if (Type == ImageType.Token)
+                    moduleGraphic = "tokens/" + Path.GetFileName(moduleGraphic);
+                return moduleGraphic;
             } 
         }
     }

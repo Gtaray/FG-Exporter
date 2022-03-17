@@ -9,7 +9,7 @@
   "readOnly": false,
   "playerModule": false,
   "anyRuleset": true,
-  "dataImagesFolder": "files/5e",
+  "fgDataFolder": "files/5e",
   "recordtypes": [
     {
       "recordType": "background",

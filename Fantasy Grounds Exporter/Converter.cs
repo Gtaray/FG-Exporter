@@ -15,9 +15,8 @@ namespace FGE
     {
         ExportConfig Config { get; set; }
         string CampaignFolder { get; set; }
-
-        XElement DB;
-        List<ImageRecord> Images = new List<ImageRecord>();
+        XElement DB { get; set; }
+        List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
         public static Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
 
         public Converter(ExportConfig config, string campaignFolder)
@@ -30,70 +29,14 @@ namespace FGE
 
         public void Export()
         {
+            // Read in the campaign db.xml
             Library = BuildLibraryDictionary();
-            XElement export = new XElement("root");
 
-            // ---------------------------------------------
             // Build db.xml / client.xml
-            // ---------------------------------------------
-            foreach (KeyValuePair<RecordKey, RecordValue> item in Library)
-            {
-                AddExportNode(export, item.Key, item.Value);
-            }
+            XDocument db = BuildDbXml();
 
-            // Remove all locked, allowplayerdrawing, and public nodes from every element
-            export.Descendants("locked").Remove();
-            export.Descendants("allowplayerdrawing").Remove();
-            export.Descendants("public").Remove();
-
-            // Sort the elements directly under the root alphabetically
-            //var sorted = export.Elements().OrderBy(e => e.Name.ToString()).ToList();
-            //export.RemoveAll();
-            //export.Add(sorted);
-            export.SortElements();
-            var entries = export.Descendants("entries").FirstOrDefault();
-            if (entries != null)
-            {
-                entries.SortElements();
-            }
-            
-
-            // Sort elements in the reference element
-            if (export.Element("reference") != null)
-                export.Element("reference").SortElements();
-
-            // Add the attributes to the root element
-            export.Add(new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value));
-            export.Add(new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value));
-            export.Add(new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value));
-
-            XDocument db = new XDocument(
-                new XDeclaration("1.0", "utf-8", null),
-                export
-            );
-
-            // ---------------------------------------------
             // Build definition.xml
-            // ---------------------------------------------
-            XDocument definition = new XDocument(
-                new XDeclaration("1.0", "utf-8", null),
-                new XElement("root",
-                    new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value),
-                    new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value),
-                    new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value),
-                    new XElement("name", Config.Name),
-                    new XElement("displayname", Config.DisplayName),
-                    new XElement("category", Config.Category),
-                    new XElement("author", Config.Author)
-                )
-            );
-            if (!Config.AnyRuleset)
-            {
-                definition
-                    .Element("root")
-                    .Add(new XElement("ruleset", Config.Ruleset));
-            }
-
+            XDocument definition = BuildDefinitionXml();
 
             // ---------------------------------------------
             // Write to output
@@ -101,11 +44,17 @@ namespace FGE
             // If it doesn't exist, create output directory
             Directory.CreateDirectory(Config.OutputFolder);
 
-            // Create temporary working directory
-            var workingdir = Directory.CreateDirectory(Path.Combine(Config.OutputFolder, $"working_{Config.FileName}"));
+            string outputDirString = Path.Combine(Config.OutputFolder, $"working_{Config.FileName}");
 
-            ExportXDoc(db, workingdir.FullName, Config.PlayerModule ? "client.xml" : "db.xml");
-            ExportXDoc(definition, workingdir.FullName, "definition.xml");
+            // If the working directly already exists due to a failed previous attempt, delete it
+            if (Directory.Exists(outputDirString))
+                Directory.Delete(outputDirString, true);
+
+            // Create temporary working directory
+            var outputDir = Directory.CreateDirectory(outputDirString);
+
+            SaveXDocToFolder(db, outputDir.FullName, Config.PlayerModule ? "client.xml" : "db.xml");
+            SaveXDocToFolder(definition, outputDir.FullName, "definition.xml");
 
             // Add the thumbnail
             if (!string.IsNullOrEmpty(Config.Thumbnail))
@@ -116,18 +65,18 @@ namespace FGE
                     throw new ArgumentException($"Could not find thumbnail {thumbnailPath}");
                 }
                 string thumbnailName = Path.GetFileName(thumbnailPath);
-                File.Copy(thumbnailPath, Path.Combine(workingdir.FullName, thumbnailName));
+                File.Copy(thumbnailPath, Path.Combine(outputDir.FullName, thumbnailName));
             }
 
             // Get all the images into the module folder
-            GatherImages(workingdir.FullName);
+            CopyImagesToWorkingDirectory(outputDir.FullName);
 
             // zip the working dir into a module zip archive
             string modFileName = Path.Combine(Config.OutputFolder, Config.FileName + ".mod");
-            ZipFile.CreateFromDirectory(workingdir.FullName, modFileName);
+            ZipFile.CreateFromDirectory(outputDir.FullName, modFileName);
 
             // Delete temporary working directory
-            workingdir.Delete(true);
+            outputDir.Delete(true);
         }
 
         Dictionary<RecordKey, RecordValue> BuildLibraryDictionary()
@@ -179,20 +128,6 @@ namespace FGE
                     noCategory ? null : parent.Attribute("name").Value,
                     record.Name.ToString());
 
-                // When processing images we need to do some extra handling to make sure the bitmaps are handled
-                if (string.Equals(typeconfig.RecordType, "image", StringComparison.OrdinalIgnoreCase))
-                {
-                    XElement bElement = record.Element("image").Element("layers").Element("layer").Element("bitmap");
-                    string bitmap = bElement?.Value ?? "";
-                    var imageRecord = new ImageRecord(record.Name.ToString(), bitmap);
-
-                    // Normalize bitmap path
-                    bElement.SetValue(imageRecord.ModuleBitmap);
-
-                    // Add for later handling
-                    Images.Add(imageRecord);
-                }
-
                 if (!dict.ContainsKey(key))
                     dict[key] = new RecordValue(
                         record,
@@ -200,6 +135,79 @@ namespace FGE
             }
 
             return dict;
+        }
+
+        // Gets tokens or bitmaps from the db
+        // if filenameOnly == true, then we ignore the path of the output file, and only take the filename
+        void GetImageFileFromDb(XElement xml, string element, ImageType type)
+        {
+            foreach (var node in xml.Descendants(element))
+            {
+                //Bitmap element can be null for layers that don't
+                // have images, like lighting or LoS layers
+                if (string.IsNullOrEmpty(node.Value))
+                    continue;
+
+                string image = node.Value;
+
+                // If the image file name references a module, then we ignore it
+                // FG doesn't seem to export any images that are referenced from other modules
+                // I think the only way to test for this is to look for the @ symbol
+                if (image.Contains("@"))
+                    continue;
+
+                var imageRecord = new ImageRecord(image, type);
+
+                // Normalize bitmap path
+                node.SetValue(imageRecord.ModuleGraphic);
+
+                // Add for later handling
+                Images.Add(imageRecord);
+            }
+        }
+
+        XDocument BuildDbXml()
+        {
+            XElement export = new XElement("root");
+
+            foreach (KeyValuePair<RecordKey, RecordValue> item in Library)
+            {
+                AddExportNode(export, item.Key, item.Value);
+            }
+
+            // Get the bitmaps and tokens
+            GetImageFileFromDb(export, "bitmap", ImageType.Bitmap);
+            GetImageFileFromDb(export, "token", ImageType.Token);
+
+            // Remove all locked, allowplayerdrawing, and public nodes from every element
+            export.Descendants("locked").Remove();
+            export.Descendants("allowplayerdrawing").Remove();
+            export.Descendants("public").Remove();
+            export.Descendants("tokenlock").Remove();
+
+            // Sort the elements directly under the root alphabetically
+            export.SortElements();
+            var entries = export.Descendants("entries").FirstOrDefault();
+            if (entries != null)
+            {
+                entries.SortElements();
+            }
+
+            // Sort elements in the reference element
+            if (export.Element("reference") != null)
+                export.Element("reference").SortElements();
+
+            // Add the attributes to the root element
+            export.Add(new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value));
+            export.Add(new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value));
+            export.Add(new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value));
+
+            XDocument db = new XDocument(
+                new XDeclaration("1.0", "utf-8", null),
+                export
+            );
+
+            return db;
         }
 
         // Adds XElement to the export xml node. Also creates any record type and category nodes if they don't exist
@@ -349,28 +357,56 @@ namespace FGE
             }
         }
 
+        XDocument BuildDefinitionXml()
+        {
+            XDocument definition = new XDocument(
+                new XDeclaration("1.0", "utf-8", null),
+                new XElement("root",
+                    new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value),
+                    new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value),
+                    new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value),
+                    new XElement("name", Config.Name),
+                    new XElement("displayname", Config.DisplayName),
+                    new XElement("category", Config.Category),
+                    new XElement("author", Config.Author)
+                )
+            );
+            if (!Config.AnyRuleset)
+            {
+                definition
+                    .Element("root")
+                    .Add(new XElement("ruleset", Config.Ruleset));
+            }
+
+            return definition;
+        }
+
         // Gathers all of the images and makes sure they exist
-        void GatherImages(string destination)
+        void CopyImagesToWorkingDirectory(string destination)
         {
             foreach (var imageRecord in Images)
             {
                 string root = imageRecord.Source == ImageRecordSource.Data
-                    ? Config.DataImagesFolder
+                    ? Config.FGDataFolder
                     : CampaignFolder;
-                string path = Path.Combine(root, imageRecord.ModuleBitmap);
+                string path = Path.Combine(root, imageRecord.SourceGraphic);
 
                 if (!File.Exists(path))
                 {
-                    throw new ArgumentException($"Bitmap file not found for image record {imageRecord.Id}. File: {path} ");
+                    throw new ArgumentException($"Bitmap file not found. File: {path} ");
                 }
 
-                string output = Path.Combine(destination, imageRecord.ModuleBitmap);
+                string output = Path.Combine(destination, imageRecord.ModuleGraphic);
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
-                File.Copy(path, output);
+
+                // If the file doesn't already exist, then copy it.
+                // It could already exist if the image is used multiple times in the campaign
+                if (!File.Exists(output))
+                    File.Copy(path, output);
             }
         }
 
-        void ExportXDoc(XDocument doc, string dir, string filename)
+        void SaveXDocToFolder(XDocument doc, string dir, string filename)
         {
             // Save the xml file to the working directory
             // It will save either db.xml (gm modules) or client.xml (palyer moduels)
