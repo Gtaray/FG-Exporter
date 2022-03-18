@@ -2,6 +2,8 @@
 
 Command line interface that exports Fantasy Grounds campaigns to modules completely outside of Fantasy Grounds.
 
+[Download the latest version](https://github.com/Gtaray/FG-Exporter/releases/latest/download/fge.exe)
+
 ## But Why?
 
 There are two primary reasons to want to create modules outside of Fantasy Grounds.
@@ -226,7 +228,7 @@ When creating your own configuration file you can start with the above example. 
 
 ## Submitting Bugs
 
-This exporter has only been tested with the **CoreRPG** and **D&D 5e** rulesets. It _should_ be flexible enough to support any ruleset, but there are likely some rulesets that operate a little differently than normal. In these cases, feel free to submit an Issue on this github, leave a comment on the Fantasy Grounds forum, or message me through Discord (@Saagael#5728).
+This exporter has only been tested with the **CoreRPG** and **D&D 5e** rulesets. It _should_ be flexible enough to support any ruleset, but there are likely some rulesets that operate a little differently than normal. In these cases, feel free to submit an Issue on this github, leave a comment on the [Fantasy Grounds forum](https://www.fantasygrounds.com/forums/showthread.php?73056-I-Created-a-Command-Line-Module-Exporter), or message me through Discord (@Saagael#5728).
 
 ## Future Updates
 
