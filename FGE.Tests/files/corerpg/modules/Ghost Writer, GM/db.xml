@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<image>
+		<id-00001>
+			<exportcontrol type="string">gm</exportcontrol>
+			<image type="image">
+				<layers>
+					<layer>
+						<name>BuzzardCliff.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/BuzzardCliff.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">GM Map</name>
+		</id-00001>
+		<id-00002>
+			<exportcontrol type="string">both</exportcontrol>
+			<image type="image">
+				<layers>
+					<layer>
+						<name>HighlandPass.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">Both Map</name>
+		</id-00002>
+	</image>
+	<library>
+		<ghostwritergm static="true">
+			<categoryname type="string">Test</categoryname>
+			<name type="string">ghostwritergm</name>
+			<entries>
+				<image>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Images</name>
+					<recordtype type="string">image</recordtype>
+				</image>
+				<npc>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">NPCs</name>
+					<recordtype type="string">npc</recordtype>
+				</npc>
+				<referencemanualpage>
+					<librarylink type="windowreference">
+						<class>reference_manual</class>
+						<recordname>reference.refmanualindex</recordname>
+					</librarylink>
+					<name type="string">Reference Manual</name>
+				</referencemanualpage>
+			</entries>
+		</ghostwritergm>
+	</library>
+	<npc>
+		<id-00001>
+			<exportcontrol type="string">both</exportcontrol>
+			<name type="string">NPC - Both</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00001>
+		<id-00002>
+			<exportcontrol type="string">gm</exportcontrol>
+			<name type="string">NPC - GM</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00002>
+	</npc>
+	<reference>
+		<refmanualdata>
+			<id-00001>
+				<blocks />
+				<exportcontrol type="string">both</exportcontrol>
+				<name type="string">Page 1 - Both</name>
+			</id-00001>
+			<id-00004>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 3 - GM</name>
+			</id-00004>
+			<id-00006>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 4 - GM</name>
+			</id-00006>
+			<id-00007>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 5 - GM</name>
+			</id-00007>
+			<id-00013>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 9 - GM</name>
+			</id-00013>
+		</refmanualdata>
+		<refmanualindex>
+			<chapters>
+				<id-00001>
+					<name type="string">Chapter 1 - Both</name>
+					<order type="number">1</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Sub chapter 1 - Both</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">page -</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00001</recordname>
+									</listlink>
+									<name type="string">Page 1 - Both</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+						<id-00002>
+							<name type="string">Sub chapter 2 - Player &amp; GM</name>
+							<order type="number">2</order>
+							<refpages>
+								<id-00002>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00004</recordname>
+									</listlink>
+									<name type="string">Page 3 - GM</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00002>
+						<id-00003>
+							<name type="string">Sub Chapter 3 - GM</name>
+							<order type="number">3</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00006</recordname>
+									</listlink>
+									<name type="string">Page 4 - GM</name>
+									<order type="number">1</order>
+								</id-00001>
+								<id-00002>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00007</recordname>
+									</listlink>
+									<name type="string">Page 5 - GM</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00003>
+					</subchapters>
+				</id-00001>
+				<id-00004>
+					<name type="string">Chapter 3 - GM</name>
+					<order type="number">3</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Sub chapter 3 - GM</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00013</recordname>
+									</listlink>
+									<name type="string">Page 9 - GM</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00004>
+			</chapters>
+		</refmanualindex>
+	</reference>
+</root>
