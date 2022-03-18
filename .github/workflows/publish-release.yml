@@ -1,15 +1,14 @@
 name: Publish Release
 
 on:
-  push:
-    tags:
-    - 'v*'
+  workflow_run:
+    workflows: [Add Version Tag]
+    types:
+      - completed
 
-jobs:
+jobs:        
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
