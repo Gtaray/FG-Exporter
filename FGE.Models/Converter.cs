@@ -19,6 +19,7 @@ namespace FGE.Models
     {
         ExportConfig Config { get; set; }
         string CampaignFolder { get; set; }
+        string OutputFolder { get; set; }
         XElement DB { get; set; }
         List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
 
@@ -27,10 +28,11 @@ namespace FGE.Models
 
         Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
 
-        public Converter(ExportConfig config, string campaignFolder)
+        public Converter(ExportConfig config, string campaignFolder, string outputFolder)
         {
             this.Config = config;
             this.CampaignFolder = campaignFolder;
+            this.OutputFolder = outputFolder;
 
             this.PreProcessors.Add(new GhostWriterPreProcessor());
 
@@ -68,9 +70,9 @@ namespace FGE.Models
             // Write to output
             // ---------------------------------------------
             // If it doesn't exist, create output directory
-            Directory.CreateDirectory(Config.OutputFolder);
+            Directory.CreateDirectory(OutputFolder);
 
-            string outputDirString = Path.Combine(Config.OutputFolder, $"working_{Config.FileName}");
+            string outputDirString = Path.Combine(OutputFolder, $"working_{Config.FileName}");
 
             // If the working directly already exists due to a failed previous attempt, delete it
             if (Directory.Exists(outputDirString))
@@ -102,7 +104,7 @@ namespace FGE.Models
 
             // zip the working dir into a module zip archive
             string modFileName = Path.Combine(Config.OutputFolder, Config.FileName + ".mod");
-            ZipFile.CreateFromDirectory(outputDir.FullName, modFileName);
+            ZipFile.CreateFromDirectory(outputDir.FullName, Path.Combine(OutputFolder, modFileName));
 
             // Delete temporary working directory
             outputDir.Delete(true);
