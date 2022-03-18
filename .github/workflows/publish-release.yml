@@ -23,11 +23,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Set Version
-      uses: SiqiLu/dotnet-bump-version@master
-      with:
-        version_files: "**/*.csproj"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish
       run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{ steps.get_version.outputs.version-without-v }}
     - name: Create Release
