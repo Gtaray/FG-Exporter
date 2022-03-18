@@ -23,13 +23,13 @@ jobs:
       uses: battila7/get-version-action@v2
       id: get_version
     - name: Echo Tag
-      run: echo ${{steps.get_version.outputs.version-without-v}}.0
+      run: echo ${{ steps.get_version.outputs.major }}.${{ steps.get_version.outputs.minor }}.${{ steps.get_version.outputs.patch }}.0
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{steps.get_version.outputs.version-without-v}}.0
+      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{ steps.get_version.outputs.major }}.${{ steps.get_version.outputs.minor }}.${{ steps.get_version.outputs.patch }}.0
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
