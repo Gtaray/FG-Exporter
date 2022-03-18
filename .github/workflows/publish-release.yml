@@ -36,5 +36,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "/home/runner/work/FG-Exporter/FG-Exporter/FGE.Console/bin/Release/net6.0/win-x64/publish/fge.exe"
+        tag: v$MAJOR.$MINOR.$PATCH
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
