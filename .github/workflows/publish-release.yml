@@ -22,19 +22,16 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Get Version Tag
-      id: get_version
-      uses: johngeorgewright/parse-version-action@v1.0.2
-      with:
-        ref: ${{ github.ref }}
-        trim-start: v
+      id: tag
+      uses: damienaicheh/extract-version-from-tag-action@v1.0.0
     - name: Echo Tag
-      run: echo ${{ steps.parser.outputs.version }}.0
+      run: echo ${{ steps.tag.outputs.MAJOR }}.${{ steps.tag.outputs.MINOR }}.${{ steps.tag.outputs.PATCH }}.${{ steps.tag.outputs.NUMBER_OF_COMMITS_SINCE_TAG }}
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{ steps.parser.outputs.version }}.0
+      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{ steps.tag.outputs.MAJOR }}.${{ steps.tag.outputs.MINOR }}.${{ steps.tag.outputs.PATCH }}.${{ steps.tag.outputs.NUMBER_OF_COMMITS_SINCE_TAG }}
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
