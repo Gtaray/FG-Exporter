@@ -24,14 +24,14 @@ jobs:
     - name: Get Version Tag
       id: tag
       uses: damienaicheh/extract-version-from-tag-action@v1.0.0
-    - name: Echo Tag
-      run: echo ${{ steps.tag.outputs.MAJOR }}.${{ steps.tag.outputs.MINOR }}.${{ steps.tag.outputs.PATCH }}.${{ steps.tag.outputs.NUMBER_OF_COMMITS_SINCE_TAG }}
+    - name: Debug
+      run: echo $MAJOR.$MINOR.$PATCH.$NUMBER_OF_COMMITS_SINCE_TAG
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=${{ steps.tag.outputs.MAJOR }}.${{ steps.tag.outputs.MINOR }}.${{ steps.tag.outputs.PATCH }}.${{ steps.tag.outputs.NUMBER_OF_COMMITS_SINCE_TAG }}
+      run: dotnet publish FGE.Console -c Release -r win-x64 --self-contained /p:AssemblyVersion=$MAJOR.$MINOR.$PATCH.$NUMBER_OF_COMMITS_SINCE_TAG
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
