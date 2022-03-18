@@ -18,9 +18,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Get Version Tag
+    - id: get_version
       uses: battila7/get-version-action@v2
-      id: get_version
     - name: Echo Version
       run: echo ${{ steps.get_version.outputs.major }}.${{ steps.get_version.outputs.minor }}.${{ steps.get_version.outputs.patch }}.0
     - name: Restore dependencies
