@@ -116,5 +116,10 @@ namespace FGE.Entities
                 return $"{path}/{GraphicFile}";
             } 
         }
+
+        public override string ToString()
+        {
+            return $"{GraphicPath}/{GraphicFile}";
+        }
     }
 }

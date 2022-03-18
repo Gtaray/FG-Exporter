@@ -1,0 +1,40 @@
+{
+  "fileName": "corerpg_datalinkupdates",
+  "name": "RefMan Data Link Test",
+  "displayName": "Reference Manual Data Links Tests",
+  "category": "Test",
+  "author": "Test",
+  "readOnly": true,
+  "playerModule": false,
+  "anyRuleset": false,
+  "ruleset": "CoreRPG",
+  "recordtypes": [
+    {
+      "recordType": "reference",
+      "libraryName": "Reference Manual",
+      "libraryPath": "referencemanualpage",
+      "librarylinkClass": "reference_manual",
+      "librarylinkRecordName": "reference.refmanualindex",
+      "includeLibraryRecordType": false
+    },
+    {
+      "recordType": "image",
+      "libraryName": "Images"
+    },
+    {
+      "recordType": "npc",
+      "libraryName": "NPCs",
+      "referencePath": "npcs"
+    },
+    {
+      "recordType": "battle",
+      "libraryName": "Encounters",
+      "referencePath": "battles"
+    },
+    {
+      "recordType": "story",
+      "libraryName": "Story",
+      "referencePath": "encounters"
+    }
+  ]
+}

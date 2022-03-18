@@ -13,6 +13,7 @@ namespace Tests
     public class UnitTestsCoreRPG
     {
         public string campaignFolderPath = "files/corerpg/campaigns";
+        public string data = "files/corerpg";
         public string output = "files/output";
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "corerpg");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -101,7 +102,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "corerpg");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -153,7 +154,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refman");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -207,7 +208,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refman");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -261,7 +262,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refman");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -315,7 +316,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refman");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -371,7 +372,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refman");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -385,6 +386,63 @@ namespace Tests
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Griffin.png"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Giant Crocodile.png"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Green Wyvern.png"));
+
+                using (var stream = zip.Entries.First(e => e.FullName == "db.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "db.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+
+                using (var stream = zip.Entries.First(e => e.FullName == "definition.xml").Open())
+                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                {
+                    string control = File.ReadAllText(Path.Combine(controlFolder, "definition.xml"));
+                    control = TestHelpers.ReplaceEscapedCharacters(control);
+                    string xml = reader.ReadToEnd();
+                    Assert.AreEqual(control, xml);
+                }
+            }
+        }
+
+        // Test updating internal data links 
+        [TestMethod]
+        [Ignore]
+        public void ExportDataLinkChanges()
+        {
+            string modfile = "files/output/corerpg_datalinkupdates.mod";
+            string controlFolder = "files/corerpg/modules/Ref Man, Data Links";
+            string workingdir = "files/output/corerpg_datalinkupdates";
+            string jsonfile = "files/corerpg/config/Ref Man, Data Links.json";
+            // Delete file from a previous run of this test
+            if (File.Exists(modfile))
+                File.Delete(modfile);
+            if (Directory.Exists(workingdir))
+                Directory.Delete(workingdir, true);
+
+            // Get the test files
+            string configfile = Path.Combine(Directory.GetCurrentDirectory(), jsonfile);
+            string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "refdatalinks");
+
+            // Run the converter
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
+
+            // Asserts
+            Assert.IsTrue(File.Exists(modfile));
+
+            using (var file = File.OpenRead(modfile))
+            using (var zip = new ZipArchive(file, ZipArchiveMode.Read))
+            {
+                Assert.AreEqual(zip.Entries.Count, 7);
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "db.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "referenceimages/Maps/BuzzardCliff.jpg"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Maps/Nested Campaign Folder/HalfwayCamp.jpg"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Giant Crocodile.png"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Griffin.png"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Mastiff.png"));
 
                 using (var stream = zip.Entries.First(e => e.FullName == "db.xml").Open())
                 using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))

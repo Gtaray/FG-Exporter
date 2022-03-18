@@ -13,6 +13,7 @@ namespace Tests
     public class UnitTestsGhostWriter
     {
         public string campaignFolderPath = "files/corerpg/campaigns";
+        public string data = "files/corerpg";
         public string output = "files/output";
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "ghostwriter");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -85,7 +86,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "ghostwriter");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));

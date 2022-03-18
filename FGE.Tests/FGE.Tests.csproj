@@ -196,6 +196,12 @@
     <None Update="files\corerpg\campaigns\ghostwriter\db.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\campaigns\refdatalinks\campaign.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\campaigns\refdatalinks\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\campaigns\refman\campaign.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -242,6 +248,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\config\Ref Man, Player Module.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\config\Ref Man, Data Links.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\config\Ref Man, Read Only, Player Module.json">
@@ -307,6 +316,12 @@
     <None Update="files\corerpg\modules\Images\definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\modules\Ref Man, Data Links\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Ref Man, Data Links\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\modules\Ref Man, Player Module\client.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -355,7 +370,13 @@
     <None Update="files\corerpg\modules\Tokens\definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\tokens\Monsters\Giant Crocodile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\tokens\Monsters\Griffin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\tokens\Monsters\Mastiff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<image>
+		<id-00001>
+			<image type="image">
+				<layers>
+					<layer>
+						<name>HighlandPass.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">HighlandPass</name>
+		</id-00001>
+	</image>
+	<library>
+		<refmandatalinktest static="true">
+			<categoryname type="string">Test</categoryname>
+			<name type="string">refmandatalinktest</name>
+			<entries>
+				<battle>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Encounters</name>
+					<recordtype type="string">battle</recordtype>
+				</battle>
+				<image>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Images</name>
+					<recordtype type="string">image</recordtype>
+				</image>
+				<npc>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">NPCs</name>
+					<recordtype type="string">npc</recordtype>
+				</npc>
+				<referencemanualpage>
+					<librarylink type="windowreference">
+						<class>reference_manual</class>
+						<recordname>reference.refmanualindex</recordname>
+					</librarylink>
+					<name type="string">Reference Manual</name>
+				</referencemanualpage>
+				<story>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Story</name>
+					<recordtype type="string">story</recordtype>
+				</story>
+			</entries>
+		</refmandatalinktest>
+	</library>
+	<reference static="true">
+		<battles>
+			<id-00001>
+				<name type="string">Encounter</name>
+				<npclist>
+					<id-00001>
+						<count type="number">1</count>
+						<link type="windowreference">
+							<class>npc</class>
+							<recordname>reference.npcs.id-00003</recordname>
+						</link>
+						<maplink>
+							<id-00001>
+								<imageref type="windowreference">
+									<class />
+									<recordname />
+								</imageref>
+								<imagex type="number">0</imagex>
+								<imagey type="number">0</imagey>
+							</id-00001>
+						</maplink>
+						<name type="string">NPC3</name>
+						<token type="token">tokens/Griffin.png</token>
+					</id-00001>
+					<id-00002>
+						<count type="number">1</count>
+						<link type="windowreference">
+							<class>npc</class>
+							<recordname>reference.npcs.id-00003</recordname>
+						</link>
+						<maplink>
+							<id-00001>
+								<imageref type="windowreference">
+									<class />
+									<recordname />
+								</imageref>
+								<imagex type="number">0</imagex>
+								<imagey type="number">0</imagey>
+							</id-00001>
+						</maplink>
+						<name type="string">NPC3</name>
+						<token type="token">tokens/Griffin.png</token>
+					</id-00002>
+					<id-00003>
+						<count type="number">1</count>
+						<link type="windowreference">
+							<class>npc</class>
+							<recordname>reference.npcs.id-00001</recordname>
+						</link>
+						<maplink>
+							<id-00001>
+								<imageref type="windowreference">
+									<class />
+									<recordname />
+								</imageref>
+								<imagex type="number">0</imagex>
+								<imagey type="number">0</imagey>
+							</id-00001>
+						</maplink>
+						<name type="string">NPC1</name>
+						<token type="token">tokens/Mastiff.png</token>
+					</id-00003>
+				</npclist>
+			</id-00001>
+		</battles>
+		<encounters>
+			<id-00001>
+				<name type="string">Story</name>
+				<text type="formattedtext">
+					<linklist>
+						<link class="battle" recordname="reference.battles.id-00001">Encounter: Encounter</link>
+						<link class="npc" recordname="reference.npcs.id-00001">NPC1</link>
+						<link class="npc" recordname="reference.npcs.id-00002">NPC: NPC2</link>
+						<link class="npc" recordname="reference.npcs.id-00003">NPC: NPC3</link>
+					</linklist>
+				</text>
+			</id-00001>
+		</encounters>
+		<npcs>
+			<id-00001>
+				<name type="string">NPC1</name>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<reach type="number">1</reach>
+				<space type="number">1</space>
+				<token type="token">tokens/Mastiff.png</token>
+			</id-00001>
+			<id-00002>
+				<name type="string">NPC2</name>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<reach type="number">1</reach>
+				<space type="number">1</space>
+				<token type="token">tokens/Giant Crocodile.png</token>
+			</id-00002>
+			<id-00003>
+				<name type="string">NPC3</name>
+				<notes type="formattedtext">
+					<p />
+				</notes>
+				<reach type="number">1</reach>
+				<space type="number">1</space>
+				<token type="token">tokens/Griffin.png</token>
+			</id-00003>
+		</npcs>
+		<refmanualdata>
+			<id-00001>
+				<blocks>
+					<id-00002>
+						<align type="string">left,right</align>
+						<blocktype type="string">imageright</blocktype>
+						<caption type="string">Only Reference Image</caption>
+						<image type="image">
+							<layers>
+								<layer>
+									<name>BuzzardCliff.jpg</name>
+									<id>0</id>
+									<parentid>-1</parentid>
+									<type>image</type>
+									<bitmap>referenceimages/Maps/BuzzardCliff.jpg</bitmap>
+								</layer>
+							</layers>
+						</image>
+						<imagelink type="windowreference">
+							<class />
+							<recordname />
+						</imagelink>
+						<order type="number">1</order>
+						<text type="formattedtext">
+							<linklist>
+								<link class="encounter" recordname="reference.encounters.id-00001">Story: Story</link>
+								<link class="battle" recordname="reference.battles.id-00001">Encounter: Encounter</link>
+								<link class="npc" recordname="reference.npcs.id-00001">NPC: NPC1</link>
+								<link class="npc" recordname="reference.npcs.id-00002">NPC: NPC2</link>
+								<link class="npc" recordname="reference.npcs.id-00003">NPC: NPC3</link>
+							</linklist>
+						</text>
+					</id-00002>
+					<id-00003>
+						<align type="string">left,right</align>
+						<blocktype type="string">imageright</blocktype>
+						<caption type="string">HighlandPass</caption>
+						<image type="image">
+							<layers>
+								<layer>
+									<name>HighlandPass.jpg</name>
+									<id>0</id>
+									<parentid>-1</parentid>
+									<type>image</type>
+									<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+								</layer>
+							</layers>
+						</image>
+						<imagelink type="windowreference">
+							<class>imagewindow</class>
+							<recordname>image.id-00001</recordname>
+						</imagelink>
+						<order type="number">2</order>
+						<text type="formattedtext">
+							<p />
+						</text>
+					</id-00003>
+				</blocks>
+				<name type="string">Page</name>
+			</id-00001>
+		</refmanualdata>
+		<refmanualindex>
+			<chapters>
+				<id-00001>
+					<name type="string">Chapter</name>
+					<order type="number">1</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Subchapter</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">story npc3 npc2 encounter npc1 npc page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00001</recordname>
+									</listlink>
+									<name type="string">Page</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00001>
+			</chapters>
+		</refmanualindex>
+	</reference>
+</root>

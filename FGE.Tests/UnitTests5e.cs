@@ -12,6 +12,8 @@ namespace Tests
     {
         public string campaignFolderPath = "files/5e/campaigns";
         public string output = "files/output";
+        public string data = "files/5e";
+        public string thumbnail = "files/5e/config/Thumbnail.png";
 
         // Tests all combinations of flags when exporting all content
         [TestMethod]
@@ -32,7 +34,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -87,7 +89,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data, "-t", thumbnail });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -139,7 +141,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -194,7 +196,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -249,7 +251,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -304,7 +306,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -359,7 +361,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -414,7 +416,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -469,7 +471,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -524,7 +526,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -575,7 +577,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -626,7 +628,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));
@@ -678,7 +680,7 @@ namespace Tests
             string campaignFolder = Path.Combine(Directory.GetCurrentDirectory(), campaignFolderPath, "5e");
 
             // Run the converter
-            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output });
+            FGE.FantasyGroundsExporter.Main(new string[] { "-i", campaignFolder, "-c", configfile, "-o", output, "-d", data });
 
             // Asserts
             Assert.IsTrue(File.Exists(modfile));

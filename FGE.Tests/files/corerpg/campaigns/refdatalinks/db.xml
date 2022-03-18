@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<battle>
+		<id-00001>
+			<name type="string">Encounter</name>
+			<npclist>
+				<id-00001>
+					<count type="number">1</count>
+					<link type="windowreference">
+						<class>npc</class>
+						<recordname>npc.id-00003</recordname>
+					</link>
+					<maplink>
+						<id-00001>
+							<imageref type="windowreference">
+								<class />
+								<recordname />
+							</imageref>
+							<imagex type="number">0</imagex>
+							<imagey type="number">0</imagey>
+						</id-00001>
+					</maplink>
+					<name type="string">NPC3</name>
+					<token type="token">tokens/Monsters/Griffin.png</token>
+				</id-00001>
+				<id-00002>
+					<count type="number">1</count>
+					<link type="windowreference">
+						<class>npc</class>
+						<recordname>npc.id-00003</recordname>
+					</link>
+					<maplink>
+						<id-00001>
+							<imageref type="windowreference">
+								<class />
+								<recordname />
+							</imageref>
+							<imagex type="number">0</imagex>
+							<imagey type="number">0</imagey>
+						</id-00001>
+					</maplink>
+					<name type="string">NPC3</name>
+					<token type="token">tokens/Monsters/Griffin.png</token>
+				</id-00002>
+				<id-00003>
+					<count type="number">1</count>
+					<link type="windowreference">
+						<class>npc</class>
+						<recordname>npc.id-00001</recordname>
+					</link>
+					<maplink>
+						<id-00001>
+							<imageref type="windowreference">
+								<class />
+								<recordname />
+							</imageref>
+							<imagex type="number">0</imagex>
+							<imagey type="number">0</imagey>
+						</id-00001>
+					</maplink>
+					<name type="string">NPC1</name>
+					<token type="token">tokens/Monsters/Mastiff.png</token>
+				</id-00003>
+			</npclist>
+		</id-00001>
+	</battle>
+	<calendar>
+		<public />
+	</calendar>
+	<combattracker>
+		<public />
+	</combattracker>
+	<currencies>
+		<public />
+	</currencies>
+	<effects>
+		<public />
+	</effects>
+	<encounter>
+		<id-00001>
+			<name type="string">Story</name>
+			<text type="formattedtext">
+				<linklist>
+					<link class="battle" recordname="battle.id-00001">Encounter: Encounter</link>
+					<link class="npc" recordname="npc.id-00001">NPC1</link>
+					<link class="npc" recordname="npc.id-00002">NPC: NPC2</link>
+					<link class="npc" recordname="npc.id-00003">NPC: NPC3</link>
+				</linklist>
+			</text>
+		</id-00001>
+	</encounter>
+	<image>
+		<id-00001>
+			<image type="image">
+				<allowplayerdrawing>on</allowplayerdrawing>
+				<layers>
+					<layer>
+						<name>HighlandPass.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">HighlandPass</name>
+		</id-00001>
+	</image>
+	<languages>
+		<public />
+	</languages>
+	<modifiers>
+		<public />
+	</modifiers>
+	<motd>
+		<public />
+	</motd>
+	<npc>
+		<id-00001>
+			<name type="string">NPC1</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Monsters/Mastiff.png</token>
+		</id-00001>
+		<id-00002>
+			<name type="string">NPC2</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Monsters/Giant Crocodile.png</token>
+		</id-00002>
+		<id-00003>
+			<name type="string">NPC3</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token">tokens/Monsters/Griffin.png</token>
+		</id-00003>
+	</npc>
+	<options>
+		<public />
+		<DDCL-custom type="string">images/decals/swk_decal.png@SmiteWorks Assets</DDCL-custom>
+	</options>
+	<partysheet>
+		<public />
+	</partysheet>
+	<quest />
+	<reference>
+		<refmanualdata>
+			<id-00001>
+				<blocks>
+					<id-00002>
+						<align type="string">left,right</align>
+						<blocktype type="string">imageright</blocktype>
+						<caption type="string">Only Reference Image</caption>
+						<image type="image">
+							<allowplayerdrawing>on</allowplayerdrawing>
+							<layers>
+								<layer>
+									<name>BuzzardCliff.jpg</name>
+									<id>0</id>
+									<parentid>-1</parentid>
+									<type>image</type>
+									<bitmap>images/Maps/BuzzardCliff.jpg</bitmap>
+								</layer>
+							</layers>
+						</image>
+						<imagelink type="windowreference">
+							<class />
+							<recordname />
+						</imagelink>
+						<order type="number">1</order>
+						<text type="formattedtext">
+							<linklist>
+								<link class="encounter" recordname="encounter.id-00001">Story: Story</link>
+								<link class="battle" recordname="battle.id-00001">Encounter: Encounter</link>
+								<link class="npc" recordname="npc.id-00001">NPC: NPC1</link>
+								<link class="npc" recordname="npc.id-00002">NPC: NPC2</link>
+								<link class="npc" recordname="npc.id-00003">NPC: NPC3</link>
+							</linklist>
+						</text>
+					</id-00002>
+					<id-00003>
+						<align type="string">left,right</align>
+						<blocktype type="string">imageright</blocktype>
+						<caption type="string">HighlandPass</caption>
+						<image type="image">
+							<allowplayerdrawing>on</allowplayerdrawing>
+							<layers>
+								<layer>
+									<name>HighlandPass.jpg</name>
+									<id>0</id>
+									<parentid>-1</parentid>
+									<type>image</type>
+									<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+								</layer>
+							</layers>
+						</image>
+						<imagelink type="windowreference">
+							<class>imagewindow</class>
+							<recordname>image.id-00001</recordname>
+						</imagelink>
+						<order type="number">2</order>
+						<text type="formattedtext">
+							<p />
+						</text>
+					</id-00003>
+				</blocks>
+				<locked type="number">1</locked>
+				<name type="string">Page</name>
+			</id-00001>
+		</refmanualdata>
+		<refmanualindex>
+			<chapters>
+				<id-00001>
+					<name type="string">Chapter</name>
+					<order type="number">1</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Subchapter</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00001</recordname>
+									</listlink>
+									<name type="string">Page</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00001>
+			</chapters>
+		</refmanualindex>
+	</reference>
+	<settings>
+		<tokenlight>
+			<public />
+			<id-00001>
+				<public />
+				<animspeed type="number">25</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">3</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">9</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">3600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Lamp</name>
+				<tag type="string">lamp</tag>
+			</id-00001>
+			<id-00002>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">1</bright>
+				<color type="string">FFFFFCC3</color>
+				<dim type="number">2</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Candle</name>
+				<tag type="string">candle</tag>
+			</id-00002>
+			<id-00003>
+				<public />
+				<animspeed type="number">25</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">4</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">8</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Torch</name>
+				<tag type="string">torch</tag>
+			</id-00003>
+			<id-00004>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">6</bright>
+				<color type="string">FFF9FEFF</color>
+				<dim type="number">12</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">3600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Lantern</name>
+				<tag type="string">lantern</tag>
+			</id-00004>
+			<id-00005>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">3</bright>
+				<color type="string">FF000000</color>
+				<dim type="number">3</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">100</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Spell - Darkness</name>
+				<tag type="string">darkness</tag>
+			</id-00005>
+			<id-00006>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">4</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">8</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Spell - Light</name>
+				<tag type="string">light</tag>
+			</id-00006>
+		</tokenlight>
+	</settings>
+</root>

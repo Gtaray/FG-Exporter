@@ -20,6 +20,8 @@ namespace FGE.Models
         ExportConfig Config { get; set; }
         string CampaignFolder { get; set; }
         string OutputFolder { get; set; }
+        string DataFolder { get; set; }
+        string Thumbnail { get; set; }
         XElement DB { get; set; }
         List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
 
@@ -28,11 +30,13 @@ namespace FGE.Models
 
         Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
 
-        public Converter(ExportConfig config, string campaignFolder, string outputFolder)
+        public Converter(ExportConfig config, string campaignFolder, string outputFolder, string dataFolder, string thumbnail)
         {
             this.Config = config;
             this.CampaignFolder = campaignFolder;
             this.OutputFolder = outputFolder;
+            this.DataFolder = dataFolder;
+            this.Thumbnail = thumbnail;
 
             this.PreProcessors.Add(new GhostWriterPreProcessor());
 
@@ -85,9 +89,9 @@ namespace FGE.Models
             SaveXDocToFolder(definition, outputDir.FullName, "definition.xml");
 
             // Add the thumbnail
-            if (!string.IsNullOrEmpty(Config.Thumbnail))
+            if (!string.IsNullOrEmpty(Thumbnail))
             {
-                string thumbnailPath = Path.Combine(Directory.GetCurrentDirectory(), Config.Thumbnail);
+                string thumbnailPath = Path.Combine(Directory.GetCurrentDirectory(), Thumbnail);
                 if (!File.Exists(thumbnailPath))
                 {
                     throw new ArgumentException($"Could not find thumbnail {thumbnailPath}");
@@ -174,40 +178,96 @@ namespace FGE.Models
         }
 
         // Gets tokens or bitmaps from the db
-        // if filenameOnly == true, then we ignore the path of the output file, and only take the filename
-        void GetImageFileFromDb(XElement xml, string element, ImageType type)
+        //void GetImageFileFromDb(XElement xml, string element, ImageType type)
+        //{
+        //    foreach (var node in xml.Descendants(element))
+        //    {
+        //        //Bitmap element can be null for layers that don't
+        //        // have images, like lighting or LoS layers
+        //        if (string.IsNullOrEmpty(node.Value))
+        //            continue;
+
+        //        string image = node.Value;
+
+        //        // If the image file name references a module, then we ignore it
+        //        // FG doesn't seem to export any images that are referenced from other modules
+        //        // I think the only way to test for this is to look for the @ symbol
+        //        if (image.Contains("@"))
+        //            continue;
+
+        //        ImageRecord imageRecord;
+        //        // If this bitmap is part of the reference manual, overwrite ImageType
+        //        if (node.Ancestors("refmanualdata").Any())
+        //        {
+        //            imageRecord = new ImageRecord(image, ImageType.RefImage);
+        //        }
+        //        else
+        //        {
+        //            imageRecord = new ImageRecord(image, type);
+        //        }
+
+        //        // Normalize bitmap path
+        //        node.SetValue(imageRecord.ModuleGraphic);
+
+        //        // Add for later handling
+        //        Images.Add(imageRecord);
+        //    }
+        //}
+        
+        // Fetch all image bitmaps from the export data
+        void GetImageBitmaps(XElement export)
         {
-            foreach (var node in xml.Descendants(element))
+            // Get image elements whose parent (ex. id-00001) don't have an imagelink element
+            // since the imagelink element seems to only be part of the reference manual
+            var bitmapElements = export
+                .Descendants("image")
+                .Where(e => e.Parent.Element("imagelink") == null)
+                .SelectMany(e => e.Descendants("bitmap"))
+                .Where(e => !string.IsNullOrEmpty(e.Value))
+                .Where(e => !e.Value.Contains("@"))
+                .GroupBy(e => e.Value)
+                .Select(e => e.FirstOrDefault());            
+
+            // Holy mother of god this took too long to figure
+            // TODO: Need to de-dupe the elements before this stage
+            // because otherwise the element updates on the first go around
+            // but the second time it hits that element again it's been changed
+            // causing the file name to be different
+            foreach (var bitmap in bitmapElements)
             {
-                //Bitmap element can be null for layers that don't
-                // have images, like lighting or LoS layers
-                if (string.IsNullOrEmpty(node.Value))
-                    continue;
-
-                string image = node.Value;
-
-                // If the image file name references a module, then we ignore it
-                // FG doesn't seem to export any images that are referenced from other modules
-                // I think the only way to test for this is to look for the @ symbol
-                if (image.Contains("@"))
-                    continue;
-
-                ImageRecord imageRecord;
-                // If this bitmap is part of the reference manual, overwrite ImageType
-                if (node.Ancestors("refmanualdata").Any())
+                string filename = Path.GetFileName(bitmap.Value);
+                string path = Path.GetDirectoryName(bitmap.Value).Replace("\\", "/");
+                if (Images.Any(i => i.GraphicFile == filename && i.GraphicPath == path))
                 {
-                    imageRecord = new ImageRecord(image, ImageType.RefImage);
-                }
-                else
-                {
-                    imageRecord = new ImageRecord(image, type);
-                }
-
+                    continue;
+                }    
+                ImageRecord record = new ImageRecord(bitmap.Value, ImageType.Image);
                 // Normalize bitmap path
-                node.SetValue(imageRecord.ModuleGraphic);
+                bitmap.SetValue(record.ModuleGraphic);
 
-                // Add for later handling
-                Images.Add(imageRecord);
+                Images.Add(record);
+            }
+        }
+
+        // Fetch all referenceimage bitmaps from the export data
+        void GetReferenceImageBitmaps()
+        {
+
+        }
+
+        // Fetch all token png files from the export data
+        void GetTokens(XElement export)
+        {
+            var tokenElements = export
+                .Descendants("token")
+                .Where(e => !string.IsNullOrEmpty(e.Value))
+                .Where(e => !e.Value.Contains("@"));
+
+            foreach (var token in tokenElements)
+            {
+                ImageRecord record = new ImageRecord(token.Value, ImageType.Token);
+                token.SetValue(record.ModuleGraphic);
+                Images.Add(record);
             }
         }
 
@@ -230,8 +290,10 @@ namespace FGE.Models
             }
 
             // Get the bitmaps and tokens
-            GetImageFileFromDb(export, "bitmap", ImageType.Image);
-            GetImageFileFromDb(export, "token", ImageType.Token);
+            GetImageBitmaps(export);
+            GetTokens(export);
+            //GetImageFileFromDb(export, "bitmap", ImageType.Image);
+            //GetImageFileFromDb(export, "token", ImageType.Token);
 
             // Remove all locked, allowplayerdrawing, and public nodes from every element
             export.Descendants("locked").Remove();
@@ -454,7 +516,7 @@ namespace FGE.Models
             foreach (var imageRecord in Images)
             {
                 string root = imageRecord.Source == ImageRecordSource.Data
-                    ? Config.FGDataFolder
+                    ? DataFolder
                     : CampaignFolder;
                 string path = Path.Combine(root, imageRecord.SourceGraphic);
 
