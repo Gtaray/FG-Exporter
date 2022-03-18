@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<image>
+		<id-00002>
+			<exportcontrol type="string">both</exportcontrol>
+			<image type="image">
+				<layers>
+					<layer>
+						<name>HighlandPass.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">Both Map</name>
+		</id-00002>
+	</image>
+	<library>
+		<ghostwriterplayer static="true">
+			<categoryname type="string">Test</categoryname>
+			<name type="string">ghostwriterplayer</name>
+			<entries>
+				<image>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">Images</name>
+					<recordtype type="string">image</recordtype>
+				</image>
+				<npc>
+					<librarylink type="windowreference">
+						<class>reference_list</class>
+						<recordname>..</recordname>
+					</librarylink>
+					<name type="string">NPCs</name>
+					<recordtype type="string">npc</recordtype>
+				</npc>
+				<referencemanualpage>
+					<librarylink type="windowreference">
+						<class>reference_manual</class>
+						<recordname>reference.refmanualindex</recordname>
+					</librarylink>
+					<name type="string">Reference Manual</name>
+				</referencemanualpage>
+			</entries>
+		</ghostwriterplayer>
+	</library>
+	<npc>
+		<id-00001>
+			<exportcontrol type="string">both</exportcontrol>
+			<name type="string">NPC - Both</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00001>
+		<id-00003>
+			<exportcontrol type="string">player</exportcontrol>
+			<name type="string">NPC - Player</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00003>
+	</npc>
+	<reference>
+		<refmanualdata>
+			<id-00001>
+				<blocks />
+				<exportcontrol type="string">both</exportcontrol>
+				<name type="string">Page 1 - Both</name>
+			</id-00001>
+			<id-00003>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 2 - Player</name>
+			</id-00003>
+			<id-00008>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 6 - Player</name>
+			</id-00008>
+			<id-00009>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 7 - Player</name>
+			</id-00009>
+			<id-00011>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 8 - Player</name>
+			</id-00011>
+		</refmanualdata>
+		<refmanualindex>
+			<chapters>
+				<id-00001>
+					<name type="string">Chapter 1 - Both</name>
+					<order type="number">1</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Sub chapter 1 - Both</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">page -</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00001</recordname>
+									</listlink>
+									<name type="string">Page 1 - Both</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+						<id-00002>
+							<name type="string">Sub chapter 2 - Player &amp; GM</name>
+							<order type="number">2</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00003</recordname>
+									</listlink>
+									<name type="string">Page 2 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00002>
+						<id-00004>
+							<name type="string">Sub Chapter 4 - Player</name>
+							<order type="number">4</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00008</recordname>
+									</listlink>
+									<name type="string">Page 6 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+								<id-00002>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00009</recordname>
+									</listlink>
+									<name type="string">Page 7 - Player</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00004>
+					</subchapters>
+				</id-00001>
+				<id-00003>
+					<name type="string">cHAPTER 2 - pLAYER</name>
+					<order type="number">2</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">sUB CHAPTER 5 - pLAYER</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00011</recordname>
+									</listlink>
+									<name type="string">Page 8 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00003>
+			</chapters>
+		</refmanualindex>
+	</reference>
+</root>

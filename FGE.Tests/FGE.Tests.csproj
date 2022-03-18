@@ -190,6 +190,12 @@
     <None Update="files\corerpg\campaigns\corerpg\tokens\Giant Crocodile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\campaigns\ghostwriter\campaign.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\campaigns\ghostwriter\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\campaigns\refman\campaign.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -226,7 +232,13 @@
     <None Update="files\corerpg\campaigns\refman\tokens\Giant Crocodile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="files\corerpg\config\Ghost Writer, Player.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\corerpg\config\Images.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\config\Ghost Writer, GM.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\config\Ref Man, Player Module.json">
@@ -275,6 +287,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\images\Maps\HighlandPass.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Ghost Writer, GM\db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Ghost Writer, GM\definition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Ghost Writer, Player\client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\corerpg\modules\Ghost Writer, Player\definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\corerpg\modules\Images\db.xml">

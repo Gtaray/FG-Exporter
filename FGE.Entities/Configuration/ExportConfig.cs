@@ -1,4 +1,7 @@
-﻿namespace FGE.Entities.Configuration
+﻿using Newtonsoft.Json.Converters;
+using System.Text.Json.Serialization;
+
+namespace FGE.Entities.Configuration
 {
     public class ExportConfig
     {
@@ -14,6 +17,8 @@
         public bool AnyRuleset { get; set; } = false;
         public string Ruleset { get; set; } = "";
         public string FGDataFolder { get; set; } = "";
+        [JsonConverter(typeof(StringEnumConverter))]
+        public GhostWriterConfig GhostWriter { get; set; } = GhostWriterConfig.None;
         public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
         public List<string> Tokens { get; set; } = new List<string>();
     }

@@ -1,6 +1,8 @@
 ﻿using FGE.Entities;
 using FGE.Entities.Configuration;
 using FGE.Models.Extensions;
+using FGE.Models.PostProcessors;
+using FGE.Models.PreProcessors;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
@@ -19,23 +21,45 @@ namespace FGE.Models
         string CampaignFolder { get; set; }
         XElement DB { get; set; }
         List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
-        public static Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
+
+        List<IPreProcessor> PreProcessors { get; set; } = new List<IPreProcessor>();
+        List<IPostProcessor> PostProcessors { get; set; } = new List<IPostProcessor>();
+
+        Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
 
         public Converter(ExportConfig config, string campaignFolder)
         {
             this.Config = config;
             this.CampaignFolder = campaignFolder;
 
+            this.PreProcessors.Add(new GhostWriterPreProcessor());
+
+            this.PostProcessors.Add(new AddKeywordsToRefPages());
+
             DB = XElement.Load(Path.Combine(CampaignFolder, "db.xml"));
         }
 
         public void Export()
         {
+            // Run pre-processors
+            foreach (var processor in PreProcessors)
+            {
+                if (processor.ShouldRun(DB, Config))
+                    processor.Process(DB, Config);
+            }
+
             // Read in the campaign db.xml
             Library = BuildLibraryDictionary();
 
             // Build db.xml / client.xml
             XDocument db = BuildDbXml();
+
+            // Run post processors
+            foreach (var processor in PostProcessors)
+            {
+                if (processor.ShouldRun(db, Config))
+                    processor.Process(db, Config);
+            }
 
             // Build definition.xml
             XDocument definition = BuildDefinitionXml();
@@ -330,7 +354,7 @@ namespace FGE.Models
             if (typeconfig == null)
                 throw new InvalidOperationException($"Could not find configuration for record type {key.RecordType}");
 
-            string sName = Regex.Replace(Config.Name, @"\s+", "").ToLower();
+            string sName = Regex.Replace(Config.Name, @"[\s_]+", "").ToLower();
 
             // Get or create the library element
             XElement library = parent.Element("library");

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<name>GhostWriterGM</name>
+	<displayname>Ghost Writer GM Test</displayname>
+	<category>Test</category>
+	<author>Test Author</author>
+	<ruleset>CoreRPG</ruleset>
+</root>

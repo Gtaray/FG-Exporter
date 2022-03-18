@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="4.1" dataversion="20210708" release="5">
+	<battle />
+	<calendar>
+		<public />
+	</calendar>
+	<combattracker>
+		<public />
+	</combattracker>
+	<currencies>
+		<public />
+	</currencies>
+	<effects>
+		<public />
+	</effects>
+	<encounter />
+	<export>
+		<anyruleset type="number">0</anyruleset>
+		<author type="string">Test Author</author>
+		<category type="string">Test</category>
+		<displayname type="string">Ghost Writer Player Test</displayname>
+		<file type="string">ghostwriter_player</file>
+		<name type="string">GhostWriter_Player</name>
+		<playervisible type="number">1</playervisible>
+		<readonly type="number">0</readonly>
+		<recordtypes>
+			<battle>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</battle>
+			<battlerandom>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</battlerandom>
+			<charsheet>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</charsheet>
+			<effect>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</effect>
+			<image>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">1</select>
+			</image>
+			<item>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</item>
+			<modifier>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</modifier>
+			<npc>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">1</select>
+			</npc>
+			<quest>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</quest>
+			<referencemanualpage>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">1</select>
+			</referencemanualpage>
+			<story>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</story>
+			<storytemplate>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</storytemplate>
+			<table>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</table>
+			<treasureparcel>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</treasureparcel>
+			<vehicle>
+				<entries />
+				<playerdefault type="number">0</playerdefault>
+				<select type="number">0</select>
+			</vehicle>
+		</recordtypes>
+		<recordviews>
+			<vehicle>
+				<bytype>
+					<select type="number">0</select>
+				</bytype>
+			</vehicle>
+		</recordviews>
+		<tokens />
+	</export>
+	<image>
+		<id-00001>
+			<exportcontrol type="string">gm</exportcontrol>
+			<image type="image">
+				<allowplayerdrawing>on</allowplayerdrawing>
+				<layers>
+					<layer>
+						<name>BuzzardCliff.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/BuzzardCliff.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">GM Map</name>
+		</id-00001>
+		<id-00002>
+			<exportcontrol type="string">both</exportcontrol>
+			<image type="image">
+				<allowplayerdrawing>on</allowplayerdrawing>
+				<layers>
+					<layer>
+						<name>HighlandPass.jpg</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Maps/Nested Data Folder/HighlandPass.jpg</bitmap>
+					</layer>
+				</layers>
+			</image>
+			<name type="string">Both Map</name>
+		</id-00002>
+	</image>
+	<item />
+	<languages>
+		<public />
+	</languages>
+	<modifiers>
+		<public />
+	</modifiers>
+	<motd>
+		<public />
+	</motd>
+	<npc>
+		<id-00001>
+			<exportcontrol type="string">both</exportcontrol>
+			<name type="string">NPC - Both</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00001>
+		<id-00002>
+			<exportcontrol type="string">gm</exportcontrol>
+			<name type="string">NPC - GM</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00002>
+		<id-00003>
+			<exportcontrol type="string">player</exportcontrol>
+			<name type="string">NPC - Player</name>
+			<notes type="formattedtext">
+				<p />
+			</notes>
+			<reach type="number">1</reach>
+			<space type="number">1</space>
+			<token type="token"></token>
+		</id-00003>
+	</npc>
+	<options>
+		<public />
+		<DDCL-custom type="string">images/decals/swk_decal.png@SmiteWorks Assets</DDCL-custom>
+	</options>
+	<partysheet>
+		<public />
+	</partysheet>
+	<reference>
+		<refmanualdata>
+			<id-00001>
+				<blocks />
+				<exportcontrol type="string">both</exportcontrol>
+				<name type="string">Page 1 - Both</name>
+			</id-00001>
+			<id-00003>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 2 - Player</name>
+			</id-00003>
+			<id-00004>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 3 - GM</name>
+			</id-00004>
+			<id-00006>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 4 - GM</name>
+			</id-00006>
+			<id-00007>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 5 - GM</name>
+			</id-00007>
+			<id-00008>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 6 - Player</name>
+			</id-00008>
+			<id-00009>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 7 - Player</name>
+			</id-00009>
+			<id-00011>
+				<blocks />
+				<exportcontrol type="string">player</exportcontrol>
+				<name type="string">Page 8 - Player</name>
+			</id-00011>
+			<id-00013>
+				<blocks />
+				<exportcontrol type="string">gm</exportcontrol>
+				<name type="string">Page 9 - GM</name>
+			</id-00013>
+		</refmanualdata>
+		<refmanualindex>
+			<chapters>
+				<id-00001>
+					<name type="string">Chapter 1 - Both</name>
+					<order type="number">1</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Sub chapter 1 - Both</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">page -</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00001</recordname>
+									</listlink>
+									<name type="string">Page 1 - Both</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+						<id-00002>
+							<name type="string">Sub chapter 2 - Player &amp; GM</name>
+							<order type="number">2</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00003</recordname>
+									</listlink>
+									<name type="string">Page 2 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+								<id-00002>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00004</recordname>
+									</listlink>
+									<name type="string">Page 3 - GM</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00002>
+						<id-00003>
+							<name type="string">Sub Chapter 3 - GM</name>
+							<order type="number">3</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00006</recordname>
+									</listlink>
+									<name type="string">Page 4 - GM</name>
+									<order type="number">1</order>
+								</id-00001>
+								<id-00002>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00007</recordname>
+									</listlink>
+									<name type="string">Page 5 - GM</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00003>
+						<id-00004>
+							<name type="string">Sub Chapter 4 - Player</name>
+							<order type="number">4</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00008</recordname>
+									</listlink>
+									<name type="string">Page 6 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+								<id-00002>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00009</recordname>
+									</listlink>
+									<name type="string">Page 7 - Player</name>
+									<order type="number">2</order>
+								</id-00002>
+							</refpages>
+						</id-00004>
+					</subchapters>
+				</id-00001>
+				<id-00003>
+					<name type="string">cHAPTER 2 - pLAYER</name>
+					<order type="number">2</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">sUB CHAPTER 5 - pLAYER</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- player page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00011</recordname>
+									</listlink>
+									<name type="string">Page 8 - Player</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00003>
+				<id-00004>
+					<name type="string">Chapter 3 - GM</name>
+					<order type="number">3</order>
+					<subchapters>
+						<id-00001>
+							<name type="string">Sub chapter 3 - GM</name>
+							<order type="number">1</order>
+							<refpages>
+								<id-00001>
+									<keywords type="string">- gm page</keywords>
+									<listlink type="windowreference">
+										<class>reference_manualtextwide</class>
+										<recordname>reference.refmanualdata.id-00013</recordname>
+									</listlink>
+									<name type="string">Page 9 - GM</name>
+									<order type="number">1</order>
+								</id-00001>
+							</refpages>
+						</id-00001>
+					</subchapters>
+				</id-00004>
+			</chapters>
+		</refmanualindex>
+	</reference>
+	<settings>
+		<tokenlight>
+			<public />
+			<id-00001>
+				<public />
+				<animspeed type="number">25</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">3</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">9</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">3600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Lamp</name>
+				<tag type="string">lamp</tag>
+			</id-00001>
+			<id-00002>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">1</bright>
+				<color type="string">FFFFFCC3</color>
+				<dim type="number">2</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Candle</name>
+				<tag type="string">candle</tag>
+			</id-00002>
+			<id-00003>
+				<public />
+				<animspeed type="number">25</animspeed>
+				<animtype type="string">flicker</animtype>
+				<bright type="number">4</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">8</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Torch</name>
+				<tag type="string">torch</tag>
+			</id-00003>
+			<id-00004>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">6</bright>
+				<color type="string">FFF9FEFF</color>
+				<dim type="number">12</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">3600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Lantern</name>
+				<tag type="string">lantern</tag>
+			</id-00004>
+			<id-00005>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">3</bright>
+				<color type="string">FF000000</color>
+				<dim type="number">3</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">100</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Spell - Darkness</name>
+				<tag type="string">darkness</tag>
+			</id-00005>
+			<id-00006>
+				<public />
+				<animspeed type="number">100</animspeed>
+				<bright type="number">4</bright>
+				<color type="string">FFFFF3E1</color>
+				<dim type="number">8</dim>
+				<dimfalloff type="number">50</dimfalloff>
+				<duration type="number">600</duration>
+				<falloff type="number">25</falloff>
+				<name type="string">Spell - Light</name>
+				<tag type="string">light</tag>
+			</id-00006>
+		</tokenlight>
+	</settings>
+	<tables />
+	<treasureparcels />
+	<vehicle />
+</root>

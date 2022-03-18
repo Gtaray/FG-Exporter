@@ -1,0 +1,34 @@
+{
+    "outputFolder": "files/output",
+    "fileName": "ghostwriter_player",
+    "thumbnail": "",
+    "name": "GhostWriter_Player",
+    "displayName": "Ghost Writer Player Test",
+    "category": "Test",
+    "author": "Test Author",
+    "readOnly": false,
+    "playerModule": true,
+    "anyRuleset": false,
+    "ruleset": "CoreRPG",
+    "fgDataFolder": "files/corerpg",
+    "ghostWriter": "player",
+    "recordtypes": [
+      {
+        "recordType": "reference",
+        "libraryName": "Reference Manual",
+        "libraryPath": "referencemanualpage",
+        "librarylinkClass": "reference_manual",
+        "librarylinkRecordName": "reference.refmanualindex",
+        "includeLibraryRecordType": false
+      },
+      {
+        "recordType": "image",
+        "libraryName": "Images"
+      },
+      {
+        "recordType": "npc",
+        "libraryName": "NPCs",
+        "referencePath": "npcdata"
+      }
+    ]
+  }
