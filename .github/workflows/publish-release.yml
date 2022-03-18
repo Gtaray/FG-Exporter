@@ -20,7 +20,7 @@ jobs:
       uses: battila7/get-version-action@v2
       id: get_version
     - name: Echo Version
-      run: echo $ {{ steps.get_version.outputs.version-without-v }}
+      run: echo ${{ steps.get_version.outputs.version-without-v }}
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
