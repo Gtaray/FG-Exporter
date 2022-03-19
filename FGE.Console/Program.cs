@@ -66,7 +66,7 @@ namespace FGE {
 
                       var Converter = new Converter(config, o.CampaignFolder, o.OutputFolder, o.DataFolder, o.Thumbnail);
 
-                      Converter.Export();
+                      Converter.ExportModule();
                   });
         }       
     }

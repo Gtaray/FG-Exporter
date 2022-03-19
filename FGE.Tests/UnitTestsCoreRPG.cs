@@ -409,7 +409,6 @@ namespace Tests
 
         // Test updating internal data links 
         [TestMethod]
-        [Ignore]
         public void ExportDataLinkChanges()
         {
             string modfile = "files/output/corerpg_datalinkupdates.mod";
@@ -439,7 +438,7 @@ namespace Tests
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "db.xml"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "definition.xml"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "referenceimages/Maps/BuzzardCliff.jpg"));
-                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Maps/Nested Campaign Folder/HalfwayCamp.jpg"));
+                Assert.IsTrue(zip.Entries.Any(e => e.FullName == "images/Maps/Nested Data Folder/HighlandPass.jpg"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Giant Crocodile.png"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Griffin.png"));
                 Assert.IsTrue(zip.Entries.Any(e => e.FullName == "tokens/Mastiff.png"));

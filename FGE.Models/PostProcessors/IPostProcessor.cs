@@ -10,7 +10,7 @@ namespace FGE.Models.PostProcessors
 {
     public interface IPostProcessor
     {
-        public bool ShouldRun(XDocument doc, ExportConfig config);
-        public void Process(XDocument doc, ExportConfig config);
+        public bool ShouldRun(Converter converter);
+        public void Process(Converter converter);
     }
 }

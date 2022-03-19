@@ -228,6 +228,7 @@
 							<order type="number">1</order>
 							<refpages>
 								<id-00001>
+									<keywords type="string">story npc3 npc2 encounter npc1 npc page</keywords>
 									<listlink type="windowreference">
 										<class>reference_manualtextwide</class>
 										<recordname>reference.refmanualdata.id-00001</recordname>

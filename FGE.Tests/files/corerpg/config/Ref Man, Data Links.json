@@ -1,7 +1,7 @@
 {
   "fileName": "corerpg_datalinkupdates",
   "name": "RefMan Data Link Test",
-  "displayName": "Reference Manual Data Links Tests",
+  "displayName": "Reference Manual Data Links Test",
   "category": "Test",
   "author": "Test",
   "readOnly": true,
@@ -34,6 +34,8 @@
     {
       "recordType": "story",
       "libraryName": "Story",
+      "dbPath": "encounter",
+      "modulePath": "encounter",
       "referencePath": "encounters"
     }
   ]
