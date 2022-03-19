@@ -25,14 +25,16 @@ namespace FGE.Models.PostProcessors
                 if (recordname.Contains("@"))
                     continue;
 
-                // throw exception if there's no matching recordtype
+                // Check dbpath first, then if that's null, check recordtype for a configuration
                 var config = converter.Config.RecordTypes
-                    .First(r => {
-                        string path = string.IsNullOrEmpty(r.DbPath) 
-                            ? r.RecordType
-                            : r.DbPath;
-                        return recordclass == path;
-                });
+                    .FirstOrDefault(r => recordclass == r.DbPath);
+                if (config == null)
+                    config = converter.Config.RecordTypes
+                        .FirstOrDefault(r => recordclass == r.RecordType);
+                // No configuration here isn't necessarily a problem
+                // since there's things like imagewindows and urls that don't need transforming
+                if (config == null)
+                    continue;
                 string id = Regex.Match(recordname, @"(id-[0-9]+)$").Value;
 
                 string newPath = $"reference.{config.ReferencePath}.{id}";
@@ -54,41 +56,21 @@ namespace FGE.Models.PostProcessors
                 if (recordname.Contains("@"))
                     continue;
 
-                // throw exception if there's no matching recordtype
+                // Check dbpath first, then if that's null, check recordtype for a configuration
                 var config = converter.Config.RecordTypes
-                    .First(r => {
-                        string path = string.IsNullOrEmpty(r.DbPath)
-                            ? r.RecordType
-                            : r.DbPath;
-                        return recordclass == path;
-                    });
+                    .FirstOrDefault(r => recordclass == r.DbPath);
+                if (config == null)
+                    config = converter.Config.RecordTypes
+                        .FirstOrDefault(r => recordclass == r.RecordType);
+                // No configuration here isn't necessarily a problem
+                // since there's things like imagewindows and urls that don't need transforming
+                if (config == null)
+                    continue;
                 string id = Regex.Match(recordname, @"(id-[0-9]+)$").Value;
 
                 string newPath = $"reference.{config.ReferencePath}.{id}";
                 link.Attribute("recordname").SetValue(newPath);
             }
-
-            // Third, replace imagelinks
-            // Don't need to replace image links, image links don't go in the
-            // reference section
-            //links = converter.Export
-            //    .Descendants("imagelink")
-            //    .Where(e => e.Element("class") != null && e.Element("recordname") != null);
-            //foreach (var link in links)
-            //{
-            //    string recordclass = link.Element("class").Value;
-            //    string recordname = link.Element("recordname").Value;
-            //    if (string.IsNullOrEmpty(recordclass) || string.IsNullOrEmpty(recordname))
-            //        continue;
-
-            //    // throw exception if there's no matching recordtype
-            //    var config = converter.Config.RecordTypes
-            //        .First(r => r.RecordType == "image" );
-            //    string id = Regex.Match(recordname, @"(id-[0-9]+)$").Value;
-
-            //    string newPath = $"reference.{config.ReferencePath}.{id}";
-            //    link.Element("recordname").SetValue(newPath);
-            //}
         }
 
         // This processor should only run if exporting a 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Tests
 {
     [TestClass]
-    public class UnitTestsGhostWriter
+    public class GhostWriter
     {
         public string campaignFolderPath = "files/corerpg/campaigns";
         public string data = "files/corerpg";

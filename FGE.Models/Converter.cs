@@ -108,9 +108,12 @@ namespace FGE.Models
             // Get all the images into the module folder
             CopyImagesToWorkingDirectory(outputDir.FullName);
 
-            // zip the working dir into a module zip archive
-            string modFileName = Path.Combine(Config.OutputFolder, Config.FileName + ".mod");
-            ZipFile.CreateFromDirectory(outputDir.FullName, Path.Combine(OutputFolder, modFileName));
+            // if the mod file already exists, delete it
+            string modFileName = Path.Combine(OutputFolder, Config.FileName + ".mod");
+            if (File.Exists(modFileName))
+                File.Delete(modFileName);
+
+            ZipFile.CreateFromDirectory(outputDir.FullName, modFileName);
 
             // Delete temporary working directory
             outputDir.Delete(true);
@@ -187,7 +190,15 @@ namespace FGE.Models
             var imageElements = export
                .Descendants("image")
                .Where(e => e.Attribute("type")?.Value == "image")
-               .Where(e => e.Parent.Element("imagelink") == null);
+               .Where(e =>
+               {
+                   var link = e.Parent.Element("imagelink");
+                   var recordname = link?.Element("recordname");
+                   // either the link class needs to be null or 
+                   // the value in recordname needs to be null
+                   bool hasRecordName = !string.IsNullOrEmpty(recordname?.Value);
+                   return link == null || hasRecordName;
+               });
             var bitmapElements = imageElements
                 .Descendants("bitmap")
                 .Where(e => !string.IsNullOrEmpty(e.Value))

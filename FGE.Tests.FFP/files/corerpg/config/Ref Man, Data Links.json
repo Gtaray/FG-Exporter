@@ -37,6 +37,25 @@
       "dbPath": "encounter",
       "modulePath": "encounter",
       "referencePath": "encounters"
+    },
+    {
+      "recordType": "table",
+      "dbPath": "tables",
+      "referencePath": "tables",
+      "modulePath": "tables",
+      "libraryName": "Tables"
+    },
+    {
+      "recordType": "treasureparcel",
+      "dbPath": "treasureparcels",
+      "referencePath": "treasureparcels",
+      "modulePath": "treasureparcels",
+      "libraryName": "Parcels"
+    },
+    {
+      "recordType": "item",
+      "referencePath": "items",
+      "libraryName": "Items"
     }
   ]
 }
