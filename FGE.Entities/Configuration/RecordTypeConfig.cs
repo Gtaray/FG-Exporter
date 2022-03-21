@@ -54,6 +54,12 @@
         public bool IncludeLibraryRecordType { get; set; } = true;
 
         /// <summary>
+        /// The data type records of this type use in Fantasy Grounds.
+        /// Used in transforming links of this data type
+        /// </summary>
+        public string DataType { get; set; }
+
+        /// <summary>
         /// List of individual record ids that are exported.
         /// If empty, exports all records
         /// </summary>
