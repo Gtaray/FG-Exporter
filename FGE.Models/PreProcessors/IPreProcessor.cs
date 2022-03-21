@@ -10,7 +10,7 @@ namespace FGE.Models.PreProcessors
 {
     public interface IPreProcessor
     {
-        public bool ShouldRun(XElement campaignDb, ExportConfig config);
-        public void Process(XElement campaignDb, ExportConfig config);
+        public bool ShouldRun(Converter converter);
+        public void Process(Converter converter);
     }
 }

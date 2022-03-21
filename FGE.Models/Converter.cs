@@ -17,35 +17,43 @@ namespace FGE.Models
 {
     public class Converter
     {
-        ExportConfig Config { get; set; }
-        string CampaignFolder { get; set; }
-        XElement DB { get; set; }
-        List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
+        public ExportConfig Config { get; set; }
+        public string CampaignFolder { get; set; }
+        public string OutputFolder { get; set; }
+        public string DataFolder { get; set; }
+        public string Thumbnail { get; set; }
+        public XElement DB { get; set; }
+        public List<ImageRecord> Images { get; set; } = new List<ImageRecord>();
+        public Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
+
+        public XElement Export { get; set; }
 
         List<IPreProcessor> PreProcessors { get; set; } = new List<IPreProcessor>();
         List<IPostProcessor> PostProcessors { get; set; } = new List<IPostProcessor>();
 
-        Dictionary<RecordKey, RecordValue> Library = new Dictionary<RecordKey, RecordValue>();
-
-        public Converter(ExportConfig config, string campaignFolder)
+        public Converter(ExportConfig config, string campaignFolder, string outputFolder, string dataFolder, string thumbnail)
         {
             this.Config = config;
             this.CampaignFolder = campaignFolder;
+            this.OutputFolder = outputFolder;
+            this.DataFolder = dataFolder;
+            this.Thumbnail = thumbnail;
 
             this.PreProcessors.Add(new GhostWriterPreProcessor());
 
+            this.PostProcessors.Add(new UpdateReferenceLinks());
             this.PostProcessors.Add(new AddKeywordsToRefPages());
 
             DB = XElement.Load(Path.Combine(CampaignFolder, "db.xml"));
         }
 
-        public void Export()
+        public void ExportModule()
         {
             // Run pre-processors
             foreach (var processor in PreProcessors)
             {
-                if (processor.ShouldRun(DB, Config))
-                    processor.Process(DB, Config);
+                if (processor.ShouldRun(this))
+                    processor.Process(this);
             }
 
             // Read in the campaign db.xml
@@ -57,8 +65,8 @@ namespace FGE.Models
             // Run post processors
             foreach (var processor in PostProcessors)
             {
-                if (processor.ShouldRun(db, Config))
-                    processor.Process(db, Config);
+                if (processor.ShouldRun(this))
+                    processor.Process(this);
             }
 
             // Build definition.xml
@@ -68,9 +76,9 @@ namespace FGE.Models
             // Write to output
             // ---------------------------------------------
             // If it doesn't exist, create output directory
-            Directory.CreateDirectory(Config.OutputFolder);
+            Directory.CreateDirectory(OutputFolder);
 
-            string outputDirString = Path.Combine(Config.OutputFolder, $"working_{Config.FileName}");
+            string outputDirString = Path.Combine(OutputFolder, $"working_{Config.FileName}");
 
             // If the working directly already exists due to a failed previous attempt, delete it
             if (Directory.Exists(outputDirString))
@@ -83,9 +91,9 @@ namespace FGE.Models
             SaveXDocToFolder(definition, outputDir.FullName, "definition.xml");
 
             // Add the thumbnail
-            if (!string.IsNullOrEmpty(Config.Thumbnail))
+            if (!string.IsNullOrEmpty(Thumbnail))
             {
-                string thumbnailPath = Path.Combine(Directory.GetCurrentDirectory(), Config.Thumbnail);
+                string thumbnailPath = Path.Combine(Directory.GetCurrentDirectory(), Thumbnail);
                 if (!File.Exists(thumbnailPath))
                 {
                     throw new ArgumentException($"Could not find thumbnail {thumbnailPath}");
@@ -100,8 +108,11 @@ namespace FGE.Models
             // Get all the images into the module folder
             CopyImagesToWorkingDirectory(outputDir.FullName);
 
-            // zip the working dir into a module zip archive
-            string modFileName = Path.Combine(Config.OutputFolder, Config.FileName + ".mod");
+            // if the mod file already exists, delete it
+            string modFileName = Path.Combine(OutputFolder, Config.FileName + ".mod");
+            if (File.Exists(modFileName))
+                File.Delete(modFileName);
+
             ZipFile.CreateFromDirectory(outputDir.FullName, modFileName);
 
             // Delete temporary working directory
@@ -170,42 +181,84 @@ namespace FGE.Models
 
             return dict;
         }
-
-        // Gets tokens or bitmaps from the db
-        // if filenameOnly == true, then we ignore the path of the output file, and only take the filename
-        void GetImageFileFromDb(XElement xml, string element, ImageType type)
+        
+        // Fetch all image bitmaps from the export data
+        void GetImageBitmaps(XElement export)
         {
-            foreach (var node in xml.Descendants(element))
+            // Get image elements whose parent (ex. id-00001) don't have an imagelink element
+            // since the imagelink element seems to only be part of the reference manual
+            var imageElements = export
+               .Descendants("image")
+               .Where(e => e.Attribute("type")?.Value == "image")
+               .Where(e =>
+               {
+                   var link = e.Parent.Element("imagelink");
+                   var recordname = link?.Element("recordname");
+                   // either the link class needs to be null or 
+                   // the value in recordname needs to be null
+                   bool hasRecordName = !string.IsNullOrEmpty(recordname?.Value);
+                   return link == null || hasRecordName;
+               });
+            var bitmapElements = imageElements
+                .Descendants("bitmap")
+                .Where(e => !string.IsNullOrEmpty(e.Value))
+                .Where(e => !e.Value.Contains("@"));   
+
+            foreach (var bitmap in bitmapElements)
             {
-                //Bitmap element can be null for layers that don't
-                // have images, like lighting or LoS layers
-                if (string.IsNullOrEmpty(node.Value))
-                    continue;
-
-                string image = node.Value;
-
-                // If the image file name references a module, then we ignore it
-                // FG doesn't seem to export any images that are referenced from other modules
-                // I think the only way to test for this is to look for the @ symbol
-                if (image.Contains("@"))
-                    continue;
-
-                ImageRecord imageRecord;
-                // If this bitmap is part of the reference manual, overwrite ImageType
-                if (node.Ancestors("refmanualdata").Any())
-                {
-                    imageRecord = new ImageRecord(image, ImageType.RefImage);
-                }
-                else
-                {
-                    imageRecord = new ImageRecord(image, type);
-                }
-
+                ImageRecord record = new ImageRecord(bitmap.Value, ImageType.Image);
                 // Normalize bitmap path
-                node.SetValue(imageRecord.ModuleGraphic);
+                bitmap.SetValue(record.ModuleGraphic);
 
-                // Add for later handling
-                Images.Add(imageRecord);
+                Images.Add(record);
+            }
+        }
+
+        // Fetch all referenceimage bitmaps from the export data
+        void GetReferenceImageBitmaps(XElement export)
+        {
+            // We are specifically looking for the recordname element that
+            // has no recordname value in there
+            // That indicates that it's a reference manual image.
+            var imageElements = export
+               .Descendants("image")
+               .Where(e => e.Attribute("type")?.Value == "image")
+               .Where(e =>
+               {
+                   var link = e.Parent.Element("imagelink");
+                   var recordname = link?.Element("recordname");
+                   return link != null
+                    && recordname != null
+                    && string.IsNullOrEmpty(recordname.Value);
+               });
+            var bitmapElements = imageElements
+                .Descendants("bitmap")
+                .Where(e => !string.IsNullOrEmpty(e.Value))
+                .Where(e => !e.Value.Contains("@"));
+
+            foreach (var bitmap in bitmapElements)
+            {
+                ImageRecord record = new ImageRecord(bitmap.Value, ImageType.RefImage);
+                // Normalize bitmap path
+                bitmap.SetValue(record.ModuleGraphic);
+
+                Images.Add(record);
+            }
+        }
+
+        // Fetch all token png files from the export data
+        void GetTokens(XElement export)
+        {
+            var tokenElements = export
+                .Descendants("token")
+                .Where(e => !string.IsNullOrEmpty(e.Value))
+                .Where(e => !e.Value.Contains("@"));
+
+            foreach (var token in tokenElements)
+            {
+                ImageRecord record = new ImageRecord(token.Value, ImageType.Token);
+                token.SetValue(record.ModuleGraphic);
+                Images.Add(record);
             }
         }
 
@@ -220,43 +273,46 @@ namespace FGE.Models
 
         XDocument BuildDbXml()
         {
-            XElement export = new XElement("root");
+            Export = new XElement("root");
 
             foreach (KeyValuePair<RecordKey, RecordValue> item in Library)
             {
-                AddExportNode(export, item.Key, item.Value);
+                AddExportNode(Export, item.Key, item.Value);
             }
 
             // Get the bitmaps and tokens
-            GetImageFileFromDb(export, "bitmap", ImageType.Image);
-            GetImageFileFromDb(export, "token", ImageType.Token);
+            GetImageBitmaps(Export);
+            GetTokens(Export);
+            GetReferenceImageBitmaps(Export);
+            //GetImageFileFromDb(export, "bitmap", ImageType.Image);
+            //GetImageFileFromDb(export, "token", ImageType.Token);
 
             // Remove all locked, allowplayerdrawing, and public nodes from every element
-            export.Descendants("locked").Remove();
-            export.Descendants("allowplayerdrawing").Remove();
-            export.Descendants("public").Remove();
-            export.Descendants("tokenlock").Remove();
+            Export.Descendants("locked").Remove();
+            Export.Descendants("allowplayerdrawing").Remove();
+            Export.Descendants("public").Remove();
+            Export.Descendants("tokenlock").Remove();
 
             // Sort the elements directly under the root alphabetically
-            export.SortElements();
-            var entries = export.Descendants("entries").FirstOrDefault();
+            Export.SortElements();
+            var entries = Export.Descendants("entries").FirstOrDefault();
             if (entries != null)
             {
                 entries.SortElements();
             }
 
             // Sort elements in the reference element
-            if (export.Element("reference") != null)
-                export.Element("reference").SortElements();
+            if (Export.Element("reference") != null)
+                Export.Element("reference").SortElements();
 
             // Add the attributes to the root element
-            export.Add(new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value));
-            export.Add(new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value));
-            export.Add(new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value));
+            Export.Add(new XAttribute("version", DB.Attributes().First(a => a.Name == "version").Value));
+            Export.Add(new XAttribute("dataversion", DB.Attributes().First(a => a.Name == "dataversion").Value));
+            Export.Add(new XAttribute("release", DB.Attributes().First(a => a.Name == "release").Value));
 
             XDocument db = new XDocument(
                 new XDeclaration("1.0", "utf-8", null),
-                export
+                Export
             );
 
             return db;
@@ -452,7 +508,7 @@ namespace FGE.Models
             foreach (var imageRecord in Images)
             {
                 string root = imageRecord.Source == ImageRecordSource.Data
-                    ? Config.FGDataFolder
+                    ? DataFolder
                     : CampaignFolder;
                 string path = Path.Combine(root, imageRecord.SourceGraphic);
 

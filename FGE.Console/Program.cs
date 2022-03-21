@@ -10,7 +10,12 @@ namespace FGE {
         {
             [Option('i', "input", Required = true, HelpText = "Path to the campaign folder that includes the db.xml to export.")]
             public string CampaignFolder { get; set; } = "";
-
+            [Option('o', "output", Required = false, HelpText = "Path to where the converted module is placed. Defaults to location of fge.exe")]
+            public string OutputFolder { get; set; } = Directory.GetCurrentDirectory();
+            [Option('t', "thumbnail", Required = false, HelpText = "Path to the thumbnail to use. Default is no thumbnail used")]
+            public string Thumbnail { get; set; } = "";
+            [Option('d', "data", Required = false, HelpText = "Path to the Fantasy Ground data folder.")]
+            public string DataFolder { get; set; } = "";
             [Option('c', "config", Required = true, HelpText = "Path to json configuration file that defines the export.")]
             public string ConfigFile { get; set; } = "";
         }
@@ -59,9 +64,9 @@ namespace FGE {
                           throw new InvalidOperationException("Module file name contains invalid characters");
                       }
 
-                      var Converter = new Converter(config, o.CampaignFolder);
+                      var Converter = new Converter(config, o.CampaignFolder, o.OutputFolder, o.DataFolder, o.Thumbnail);
 
-                      Converter.Export();
+                      Converter.ExportModule();
                   });
         }       
     }

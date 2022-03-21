@@ -1,0 +1,57 @@
+{
+  "fileName": "5e_ExportAll",
+  "thumbnail": "",
+  "name": "FGE Sample",
+  "displayName": "Sample Campaign",
+  "category": "Sample",
+  "author": "George Taray",
+  "readOnly": false,
+  "playerModule": false,
+  "anyRuleset": false,
+  "ruleset": "5E",
+  "fgDataFolder": "files/5e",
+  "recordtypes": [
+    {
+      "recordType": "background",
+      "libraryName": "Backgrounds"
+    },
+    {
+      "recordType": "class",
+      "libraryName": "Classes"
+    },
+    {
+      "recordType": "feat",
+      "libraryName": "Feats"
+    },
+    {
+      "recordType": "image",
+      "libraryName": "Images"
+    },
+    {
+      "recordType": "item",
+      "libraryName": "Items"
+    },
+    {
+      "recordType": "npc",
+      "libraryName": "NPCs"
+    },
+    {
+      "recordType": "race",
+      "libraryName": "Races"
+    },
+    {
+      "recordType": "skill",
+      "libraryName": "Skills"
+    },
+    {
+      "recordType": "spell",
+      "libraryName": "Spells"
+    },
+    {
+      "recordType": "table",
+      "libraryName": "Tables",
+      "dbPath": "tables",
+      "modulePath": "tables"
+    }
+  ]
+}

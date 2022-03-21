@@ -10,10 +10,10 @@ namespace FGE.Models.PostProcessors
 {
     public class AddKeywordsToRefPages : IPostProcessor
     {
-        public bool ShouldRun(XDocument doc, ExportConfig config)
+        public bool ShouldRun(Converter converter)
         {
             // Look for any ref pages that don't have a keyword element
-            return (bool)doc
+            return (bool)converter.Export
                 .Descendants("refmanualindex")?
                 .Descendants("refpages")?
                 .Elements()
@@ -21,9 +21,9 @@ namespace FGE.Models.PostProcessors
                 .Any();
         }
 
-        public void Process(XDocument doc, ExportConfig config)
+        public void Process(Converter converter)
         {
-            var refpages = doc
+            var refpages = converter.Export
                 .Descendants("refmanualindex")?
                 .Descendants("refpages")?
                 .Elements()

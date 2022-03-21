@@ -10,16 +10,16 @@ namespace FGE.Models.PreProcessors
 {
     public class GhostWriterPreProcessor : IPreProcessor
     {
-        public bool ShouldRun(XElement campaignDb, ExportConfig config)
+        public bool ShouldRun(Converter converter)
         {
-            return config.GhostWriter != GhostWriterConfig.None;
+            return converter.Config.GhostWriter != GhostWriterConfig.None;
         }
 
-        public void Process(XElement campaignDb, ExportConfig config)
+        public void Process(Converter converter)
         {
-            GhostWriterConfig gwconfig = config.GhostWriter;
+            GhostWriterConfig gwconfig = converter.Config.GhostWriter;
 
-            var exportnodes = campaignDb
+            var exportnodes = converter.DB
                 .Descendants("exportcontrol")
                 .Where(e => !GhostWriter.Matches(e.Value, gwconfig));
             List<XElement> toRemove = new List<XElement>();
@@ -34,7 +34,7 @@ namespace FGE.Models.PreProcessors
                 // if node is a refmanaul page, we also need to delete it's corresponding index entry
                 if (node.Parent.Name == "refmanualdata")
                 {
-                    var recordname = campaignDb
+                    var recordname = converter.DB
                         .Descendants("refmanualindex")?
                         .FirstOrDefault()?
                         .Descendants("recordname")?
@@ -50,7 +50,7 @@ namespace FGE.Models.PreProcessors
 
             // After removing all of the nodes we don't want, we need to go through the
             // reference manual index and remove any empty chapters and subchapter entries
-            campaignDb
+            converter.DB
                 .Descendants("refpages")
                 .Where(s => s.IsEmpty)
                 .Select(s => s.Parent)
@@ -58,7 +58,7 @@ namespace FGE.Models.PreProcessors
 
             // After removing all empty subchapters, now we need to remove
             // all empty chapters
-            campaignDb
+            converter.DB
                 .Descendants("subchapters")
                 .Where(s => s.IsEmpty)
                 .Select(s => s.Parent)

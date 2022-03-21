@@ -7,7 +7,6 @@ namespace FGE.Entities.Configuration
     {
         public string OutputFolder { get; set; } = "";
         public string FileName { get; set; } = "";
-        public string Thumbnail { get; set; } = "";
         public string Name { get; set; } = "";
         public string DisplayName { get; set; } = "";
         public string Category { get; set; } = "";
@@ -16,7 +15,6 @@ namespace FGE.Entities.Configuration
         public bool PlayerModule { get; set; } = false;
         public bool AnyRuleset { get; set; } = false;
         public string Ruleset { get; set; } = "";
-        public string FGDataFolder { get; set; } = "";
         [JsonConverter(typeof(StringEnumConverter))]
         public GhostWriterConfig GhostWriter { get; set; } = GhostWriterConfig.None;
         public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
