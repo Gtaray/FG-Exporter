@@ -56,12 +56,16 @@ namespace FGE.Models.PostProcessors
                 if (recordname.Contains("@"))
                     continue;
 
-                // Check dbpath first, then if that's null, check recordtype for a configuration
+                // Check data type first, then dbpath, then if that's null, check recordtype for a configuration
                 var config = converter.Config.RecordTypes
                     .FirstOrDefault(r => recordclass == r.DbPath);
                 if (config == null)
                     config = converter.Config.RecordTypes
+                        .FirstOrDefault(r => recordclass == r.DataType);
+                if (config == null)
+                    config = converter.Config.RecordTypes
                         .FirstOrDefault(r => recordclass == r.RecordType);
+
                 // No configuration here isn't necessarily a problem
                 // since there's things like imagewindows and urls that don't need transforming
                 if (config == null)
