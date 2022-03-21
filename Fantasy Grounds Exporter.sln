@@ -11,6 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGE.Tests.FFP", "FGE.Tests.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGE.Entities", "FGE.Entities\FGE.Entities.csproj", "{3666D2BC-7560-430A-BC8D-F61EE86B92F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{6E35CFEB-8689-4684-AE23-88082933099A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\bump-version.yml = .github\workflows\bump-version.yml
+		.github\workflows\publish-release.yml = .github\workflows\publish-release.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
