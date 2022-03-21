@@ -17,11 +17,14 @@ There are two primary reasons to want to create modules outside of Fantasy Groun
 ### Command Line Interface
 
 ```
-Usage: fge [--version] [-i|--input CampaignFolder] [-c|--config ConfigFile]
+Usage: fge [--version] [-i|--input CampaignFolder] [-o|--output OutputFolder] [-d|--data DataFolder] [-t|--thumbnail Thumbnail.png] [-c|--config ConfigFile]
 Command line interface to export Fantasy Grounds modules from a campaign
 
 Available options:
     -i, --input     Required. Path to the campaign folder that includes the db.xml to export.
+    -o  --output    Required. Path to where the converted module is placed. Defaults to location of fge.exe
+    -d  --data      Path to the Fantasy Grounds data folder.
+    -t  --thumbnail Path to the thumbnail to use. Default is no thumbnail used
     -c, --config    Required. Path to json configuration file that defines the export.
     --help          Display this help screen.
     --version       Display version information.
