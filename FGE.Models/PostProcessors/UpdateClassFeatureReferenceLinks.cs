@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace FGE.Models.PostProcessors
 {
     // Should only run on 5e conversions
-    internal class UpdateClassFeatureRefernceLinks : IPostProcessor
+    // Currently unused. Use UpdateClassAbilityReferenceLinks post processor instead
+    internal class UpdateClassFeatureReferenceLinks : IPostProcessor
     {
         public void Process(Converter converter)
         {
