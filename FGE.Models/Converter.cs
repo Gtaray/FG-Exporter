@@ -43,7 +43,7 @@ namespace FGE.Models
 
             this.PostProcessors.Add(new UpdateReferenceLinks());
             this.PostProcessors.Add(new AddKeywordsToRefPages());
-            this.PostProcessors.Add(new UpdateClassFeatureRefernceLinks());
+            this.PostProcessors.Add(new UpdateClassAbilityReferenceLinks());
 
             DB = XElement.Load(Path.Combine(CampaignFolder, "db.xml"));
         }
