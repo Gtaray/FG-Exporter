@@ -14,8 +14,10 @@ namespace FGE.Models.PostProcessors
         {
             var links = converter.Export
                 .Descendants("resultlink")
-                .Where(e => e.Element("class") != null &&
-                            e.Element("recordname") != null);
+                .Where(e => e.Element("class") != null && 
+                            !string.IsNullOrEmpty(e.Element("class")?.Value) &&
+                            e.Element("recordname") != null &&
+                            !string.IsNullOrEmpty(e.Element("recordname")?.Value));
             foreach (var link in links)
             {
                 var recordclass = link.Element("class").Value;
