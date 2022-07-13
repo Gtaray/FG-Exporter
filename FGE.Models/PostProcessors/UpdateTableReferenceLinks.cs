@@ -20,6 +20,11 @@ namespace FGE.Models.PostProcessors
                             !string.IsNullOrEmpty(e.Element("recordname")?.Value));
             foreach (var link in links)
             {
+                string recordname = link.Element("recordname").Value;
+                // Skip listed exceptions
+                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                    continue;
+
                 var recordclass = link.Element("class").Value;
                 var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == recordclass);
 

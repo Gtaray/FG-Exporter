@@ -18,6 +18,11 @@ namespace FGE.Models.PostProcessors
                             !string.IsNullOrEmpty(e.Attribute("recordname")?.Value));
             foreach (var link in links)
             {
+                string recordname = link.Attribute("recordname").Value;
+                // Skip listed exceptions
+                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                    continue;
+
                 var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == "race");
                 string replace = "reference." + config.ReferencePath;
 

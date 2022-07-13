@@ -24,6 +24,9 @@ namespace FGE.Models.PostProcessors
                 // Skip any references to other modules
                 if (recordname.Contains("@"))
                     continue;
+                // Skip listed exceptions
+                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                    continue;
 
                 // Check dbpath first, then if that's null, check recordtype for a configuration
                 var config = converter.Config.RecordTypes
@@ -54,6 +57,9 @@ namespace FGE.Models.PostProcessors
                     continue;
                 // Skip any references to other modules
                 if (recordname.Contains("@"))
+                    continue;
+                // Skip listed exceptions
+                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
                     continue;
 
                 // Check data type first, then dbpath, then if that's null, check recordtype for a configuration

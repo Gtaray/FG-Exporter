@@ -20,5 +20,6 @@ namespace FGE.Entities.Configuration
         public bool CreateSpellLists { get; set; } = false;
         public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
         public List<string> Tokens { get; set; } = new List<string>();
+        public List<string> ReferenceLinkConversionExceptions { get; set; } = new List<string>();
     }
 }

@@ -54,6 +54,28 @@ namespace FGE.Models.PostProcessors
             );
 
             converter.Export.Add(list);
+
+            //  Now add the entry to the library node
+            var entries = converter.Export.Element("library")?.Descendants("entries").FirstOrDefault();
+            if (entries != null)
+            {
+                entries.Add(
+                    new XElement(
+                        "class_spell_views",
+                        new XElement(
+                            "librarylink",
+                            new XAttribute("type", "windowreference"),
+                            new XElement("class", "referenceindex"),
+                            new XElement("recordname", "list.class_spell_views")
+                        ),
+                        new XElement(
+                            "name",
+                            new XAttribute("type", "string"),
+                            "Class Spell Lists"
+                        )
+                    )
+                );
+            }
         }
 
         public bool ShouldRun(Converter converter)
