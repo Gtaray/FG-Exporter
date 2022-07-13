@@ -46,6 +46,7 @@ namespace FGE.Models
             this.PostProcessors.Add(new UpdateClassAbilityReferenceLinks());
             this.PostProcessors.Add(new UpdateTableReferenceLinks());
             this.PostProcessors.Add(new UpdateRacialTraitReferenceLinks());
+            this.PostProcessors.Add(new CreateClassSpellLists());
 
             DB = XElement.Load(Path.Combine(CampaignFolder, "db.xml"));
         }

@@ -17,6 +17,7 @@ namespace FGE.Entities.Configuration
         public string Ruleset { get; set; } = "";
         [JsonConverter(typeof(StringEnumConverter))]
         public GhostWriterConfig GhostWriter { get; set; } = GhostWriterConfig.None;
+        public bool CreateSpellLists { get; set; } = false;
         public List<RecordTypeConfig> RecordTypes { get; set; } = new List<RecordTypeConfig>();
         public List<string> Tokens { get; set; } = new List<string>();
     }
