@@ -22,7 +22,7 @@ namespace FGE.Models.PostProcessors
             {
                 string recordname = link.Element("recordname")?.Value;
                 // Skip listed exceptions
-                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                if (converter.Config.ReferenceLinkConversionOverrides.Any(e => e.Before.Equals(recordname)))
                     continue;
 
                 var recordclass = link.Element("class").Value;

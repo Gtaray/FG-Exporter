@@ -25,7 +25,7 @@ namespace FGE.Models.PostProcessors
                 if (recordname.Contains("@"))
                     continue;
                 // Skip listed exceptions
-                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                if (converter.Config.ReferenceLinkConversionOverrides.Any(e => e.Before.Equals(recordname)))
                     continue;
 
                 // Check dbpath first, then if that's null, check recordtype for a configuration
@@ -59,7 +59,7 @@ namespace FGE.Models.PostProcessors
                 if (recordname.Contains("@"))
                     continue;
                 // Skip listed exceptions
-                if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
+                if (converter.Config.ReferenceLinkConversionOverrides.Any(e => e.Before.Equals(recordname)))
                     continue;
 
                 // Check data type first, then dbpath, then if that's null, check recordtype for a configuration
