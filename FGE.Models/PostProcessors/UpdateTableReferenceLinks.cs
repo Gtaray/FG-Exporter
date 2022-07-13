@@ -27,11 +27,13 @@ namespace FGE.Models.PostProcessors
 
                 var recordclass = link.Element("class").Value;
                 var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == recordclass);
-
-                string replace = "reference." + config.ReferencePath;
-                string regex = $"^({recordclass})";
-                string newVal = Regex.Replace(link.Element("recordname").Value, regex, replace);
-                link.Element("recordname").SetValue(newVal);
+                if (config != null)
+                {
+                    string replace = "reference." + config.ReferencePath;
+                    string regex = $"^({recordclass})";
+                    string newVal = Regex.Replace(link.Element("recordname").Value, regex, replace);
+                    link.Element("recordname").SetValue(newVal);
+                }
             }
         }
 

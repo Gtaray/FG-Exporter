@@ -24,10 +24,13 @@ namespace FGE.Models.PostProcessors
                     continue;
 
                 var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == "race");
-                string replace = "reference." + config.ReferencePath;
+                if (config != null)
+                {
+                    string replace = "reference." + config.ReferencePath;
 
-                string newVal = Regex.Replace(link.Attribute("recordname").Value, @"^(race)", replace);
-                link.Attribute("recordname").SetValue(newVal);
+                    string newVal = Regex.Replace(link.Attribute("recordname").Value, @"^(race)", replace);
+                    link.Attribute("recordname").SetValue(newVal);
+                }
             }
         }
 
