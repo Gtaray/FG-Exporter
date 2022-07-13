@@ -25,11 +25,13 @@ namespace FGE.Models.PostProcessors
                 if (converter.Config.ReferenceLinkConversionExceptions.Any(e => e.Equals(recordname)))
                     continue;
 
-                var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == "class");
+                var recordtype = recordname.Split('.')[0];
+
+                var config = converter.Config.RecordTypes.FirstOrDefault(r => r.RecordType == recordtype);
                 if (config != null)
                 {
                     string replace = "reference." + config.ReferencePath;
-                    string newVal = Regex.Replace(link.Attribute("recordname").Value, @"^(class)", replace);
+                    string newVal = Regex.Replace(link.Attribute("recordname").Value, @"^(" + recordtype +@")", replace);
                     link.Attribute("recordname").SetValue(newVal);
                 }
             }
